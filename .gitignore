@@ -1,0 +1,5 @@
+# Firmware is supplied by the user; none is kept in this repository.
+*.syx
+__pycache__/
+*.pyc
+.DS_Store

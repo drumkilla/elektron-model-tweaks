@@ -1,0 +1,39 @@
+{
+ "id": "browser-scroll",
+ "order": 3,
+ "name": "Scroll long names in the browser",
+ "description": [
+  "A selected name in the sound/sample/folder browser scrolls left when it does not fit.",
+  "About 0.17 s per character, with a ~0.5 s pause at each end. A name that already fits stays put."
+ ],
+ "device": "Model:Cycles",
+ "os": "1.13",
+ "section": 3,
+ "writes": [
+  {
+   "off": 676257,
+   "old": "07199c",
+   "new": "147f22"
+  },
+  {
+   "off": 1342242,
+   "old": "ffff",
+   "new": "4fef"
+  },
+  {
+   "off": 1342245,
+   "old": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+   "new": "f048d7041c242f0028262f002445f9401485f0204278007200700010186706d280528460f620044840d0812212b081670c248042aa000442aa000c60604eb9400cf9a82f004eb940069b84588f203940a78e28220092aa0008e089674025400008200490836c027000222a0004b280640c4a81670c528125410004602072"
+  },
+  {
+   "off": 1342372,
+   "old": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+   "new": "60027200202a000c52802540000c7603b083650a42aa000c528125410004202a0004d1af00284cd7041c4fef00104ef94007199c"
+  },
+  {
+   "off": 1343984,
+   "old": "ffffffffffffffffffffffffffffffff",
+   "new": "00000000000000000000000000000000"
+  }
+ ]
+}

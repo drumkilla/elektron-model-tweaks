@@ -1,0 +1,56 @@
+{
+ "id": "latching-mute",
+ "order": 1,
+ "name": "Latching track mute",
+ "description": [
+  "Hold TRK and tap FUNC: the mute mode latches and the FUNC key lights up.",
+  "A short tap on FUNC alone leaves the mode.",
+  "No FUNC combination drops it any more, including holding FUNC to turn the encoders fast.",
+  "TRK, RETRIG and PATTERN bank select keep working while the mode is latched."
+ ],
+ "device": "Model:Cycles",
+ "os": "1.13",
+ "section": 3,
+ "writes": [
+  {
+   "off": 143265,
+   "old": "b9",
+   "new": "f9"
+  },
+  {
+   "off": 143267,
+   "old": "0cfaf4",
+   "new": "1486c6"
+  },
+  {
+   "off": 143642,
+   "old": "2f024eb9400740ca",
+   "new": "4ef9401483284e71"
+  },
+  {
+   "off": 1050693,
+   "old": "0234b6",
+   "new": "148744"
+  },
+  {
+   "off": 1343272,
+   "old": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+   "new": "4eb9400cf9a82f004eb94006bb18588f4a00664e487800014eb94007faf4588f4a806630487800024eb94007faf4588f4a80662e487800034eb94007faf4588f4a80661e487800044eb94007faf4588f4a80660e2f024eb9400740ca4ef9400235224ef94002357e"
+  },
+  {
+   "off": 1344098,
+   "old": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+   "new": "2f0a2f02242f0010246f000c2f024eb94007240c588f7201b280662e2f024eb940072470588f4a0067324eb9401486fc4a8066284e714e714e7120522f0a206800284e90588f420060142f4200102f4a000c241f245f4ef940075f3c7001241f245f4e754879404a8cb848780002487800184eb9400cfaf42f004eb940005f864fef0010201200800100000024804eb9400cfaf44ef9400233a61039401487ed671c1039401487ec6624203940a78e2890b9401487e00c80000004006410487800024eb94007faf4588f4a80670a700113c0401487ed4e754239401487ed70004e752f02242f000c2f024eb94007240c588f7201b0816700003a1039401487ed670000522f024eb9400724a0588f4a0067000042487800014eb94007faf4588f4a8067000030700113c0401487ec600000242f024eb9400724a0588f4a00670000144239401487ec203940a78e2823c0401487e0241f4ef940148662"
+  },
+  {
+   "off": 1344480,
+   "old": "ffffffff",
+   "new": "00000000"
+  },
+  {
+   "off": 1344492,
+   "old": "ffff",
+   "new": "0000"
+  }
+ ]
+}

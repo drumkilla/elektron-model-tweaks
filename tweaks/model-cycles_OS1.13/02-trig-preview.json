@@ -1,0 +1,45 @@
+{
+ "id": "trig-preview",
+ "order": 2,
+ "name": "Trig preview (TRIG + PAGE)",
+ "description": [
+  "With the sequencer stopped, hold a step and press PAGE: the step sounds with its own note, length, p-locks and sound-lock.",
+  "The page does not turn.",
+  "It sounds regardless of the trig condition and probability, and through a muted track. The trig is not erased."
+ ],
+ "device": "Model:Cycles",
+ "os": "1.13",
+ "section": 3,
+ "writes": [
+  {
+   "off": 139502,
+   "old": "2f034eb9400724a0",
+   "new": "4ef9401489fa4e71"
+  },
+  {
+   "off": 1345018,
+   "old": "ffff",
+   "new": "4fef"
+  },
+  {
+   "off": 1345021,
+   "old": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+   "new": "d448d77cfc202e000c2f004eb9400724a0588f4a0067000158202e000c2f004eb940072490588f4a00660001444eb94005481a4a80660001384eb9400cf9a826402f0b4eb94006b978588f4a00670001202f0b4eb94006bb18588f4a00660001102f0b4eb94006bdfe588f4a00670001004eb9400cf8662f004eb94000eb90588f2f004eb940012412588f2400203940a7887c4a80670000d82840203940a788884a80670000ca2002e3882200e789d081e589d081e389d081e589d0812a4cdbc01c2d02cf70641b4002cf487800012f0b4eb94006b740508f282b01607a0076000704670000542e03de85204dd1c7122802042f0170"
+  },
+  {
+   "off": 1345268,
+   "old": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+   "new": "1140020442a742a72f07203940a788882f002f0c2f024eb9400548ce4fef0018221f204dd1c7114102044a8067000014204072022141000c2f004eb940092116588f52830c83000000206600"
+  },
+  {
+   "off": 1345345,
+   "old": "ffffffffffffffffffffffffffffff",
+   "new": "9e4a856600000c7a20282b015c6000"
+  },
+  {
+   "off": 1345361,
+   "old": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+   "new": "8c1b4602cf7000154000744cd77cfc4fef002c74014ef940022ff44cd77cfc4fef002c2f034eb9400724a04ef9400224f6"
+  }
+ ]
+}

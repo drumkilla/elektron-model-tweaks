@@ -1,0 +1,9 @@
+{
+ "device": "Model:Cycles",
+ "os": "1.13",
+ "stock_syx": "model-cycles_OS1.13.syx",
+ "stock_syx_sha256": "44fe586269631a0ca7da25a3383fc6733c314809505fc3cc52f1e0ed9800640c",
+ "section": 3,
+ "section_len": 1744192,
+ "section_sha256": "cc99d4f0175d34d1e91d046e6ec85a5e8ab58ab9edbb3c24406acd48cb99ee98"
+}
