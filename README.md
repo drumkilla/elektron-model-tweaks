@@ -6,6 +6,11 @@ script applies the tweaks you pick and writes a new file next to it.
 
 **Python 3 is the only requirement.**
 
+These tweaks are also available as a part of these projects:
+
+   * **[Modded Cycles](https://github.com/18nelli18/Modded-Cycles) by 18nelli18** - Model:Cycles only atm.
+   * **[Model-TG](https://github.com/TinyGregAudio/Model-TG) by TinyAudioGreg** - Model:Cycles only atm.
+
 ---
 
 ## Using it
@@ -133,3 +138,6 @@ applied to a file you supply yourself.
 
 MIT, see [LICENSE](LICENSE). The license covers this tooling only, not the
 firmware it is applied to.
+
+## Credits
+Building scripts are based on **[elektron-firmware-tool](https://github.com/mischa85/elektron-firmware-tool)** (MIT) by **mischa85**
