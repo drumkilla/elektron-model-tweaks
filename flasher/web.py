@@ -49,7 +49,8 @@ def inspect(data, filename):
     return json.dumps({
         'ok': True, 'device': key[0], 'os': key[1], 'sha256': digest,
         'exact': digest == entry['meta']['stock_syx_sha256'],
-        'tweaks': [{'id': t['id'], 'name': t['name'], 'description': t['description']}
+        'tweaks': [{'id': t['id'], 'name': t['name'], 'description': t['description'],
+                    'links': t.get('links', [])}
                    for t in entry['tweaks']],
     })
 

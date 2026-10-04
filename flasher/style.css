@@ -143,3 +143,6 @@ progress::-moz-progress-bar { background: var(--accent); }
 .links li:hover { border-color: var(--accent); }
 .links a { font-family: var(--display); font-size: 16px; font-weight: 500; justify-self: start; }
 .links span { color: var(--ink-dim); font-size: 12.5px; }
+.tweak-links { display: flex; flex-wrap: wrap; gap: 8px 18px; margin-top: 10px; }
+.tweak-links a { font-size: 10.5px; letter-spacing: 0.14em; text-transform: uppercase; }
+.tweak-links a::before { content: "\25B6\FE0E  "; font-size: 9px; }

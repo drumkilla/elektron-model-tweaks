@@ -126,6 +126,20 @@ function showTweaks(tweaks) {
       ul.appendChild(li);
     }
     body.append(title, ul);
+    if (t.links && t.links.length) {
+      const links = document.createElement("div");
+      links.className = "tweak-links";
+      for (const l of t.links) {
+        const a = document.createElement("a");
+        a.href = l.url;
+        a.target = "_blank";
+        a.rel = "noopener";
+        a.textContent = l.label;
+        a.addEventListener("click", (e) => e.stopPropagation());   // follow the link, keep the checkbox
+        links.appendChild(a);
+      }
+      body.appendChild(links);
+    }
     card.append(cb, body);
     box.appendChild(card);
   }

@@ -1,7 +1,7 @@
 {
  "id": "usb16",
  "order": 4,
- "name": "16-channel USB audio (A+M / A16 / MID)",
+ "name": "16-channel USB audio",
  "description": [
   "16-channel USB audio, switchable in CONFIG > DEVICE > USB MODE:",
   "  A+M  stock: the stereo mix and MIDI (default after flashing)",
@@ -9,6 +9,16 @@
   "  MID  MIDI only",
   "The channels are named on the host (T1 L ... Reverb R); 48 kHz, 24 bit.",
   "Based on ms-multi-output by Scott Metoyer (MIT) and the work on it in Modded-Cycles by 18nelli."
+ ],
+ "links": [
+  {
+   "label": "Video demo: Model:Samples",
+   "url": "https://youtu.be/WhjTpwjLUnM"
+  },
+  {
+   "label": "Video demo: Model:Cycles",
+   "url": "https://youtu.be/d23LYDKHXyk"
+  }
  ],
  "device": "Model:Samples",
  "os": "1.13",
