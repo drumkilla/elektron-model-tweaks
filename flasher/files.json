@@ -1,0 +1,18 @@
+[
+ "tweak.py",
+ "mtlib/__init__.py",
+ "mtlib/aplib.py",
+ "mtlib/container.py",
+ "mtlib/syx.py",
+ "tweaks/model-cycles_OS1.13/01-latching-mute.json",
+ "tweaks/model-cycles_OS1.13/02-trig-preview.json",
+ "tweaks/model-cycles_OS1.13/03-browser-scroll.json",
+ "tweaks/model-cycles_OS1.13/04-usb16.json",
+ "tweaks/model-cycles_OS1.13/device.json",
+ "tweaks/model-samples_OS1.13/01-latching-mute.json",
+ "tweaks/model-samples_OS1.13/02-trig-preview.json",
+ "tweaks/model-samples_OS1.13/03-browser-scroll.json",
+ "tweaks/model-samples_OS1.13/04-usb16.json",
+ "tweaks/model-samples_OS1.13/device.json",
+ "flasher/web.py"
+]

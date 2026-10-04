@@ -1,0 +1,133 @@
+{
+ "id": "usb16",
+ "order": 4,
+ "name": "16-channel USB audio (A+M / A16 / MID)",
+ "description": [
+  "16-channel USB audio, switchable in CONFIG > DEVICE > USB MODE:",
+  "  A+M  stock: the stereo mix and MIDI (default after flashing)",
+  "  A16  16 channels and MIDI: T1..T6 as L/R pairs after VOL and PAN, then delay return L/R and reverb return L/R",
+  "  MID  MIDI only",
+  "The channels are named on the host (T1 L ... Reverb R); 48 kHz, 24 bit.",
+  "Based on ms-multi-output by Scott Metoyer (MIT) and the work on it in Modded-Cycles by 18nelli."
+ ],
+ "device": "Model:Samples",
+ "os": "1.13",
+ "section": 3,
+ "writes": [
+  {
+   "off": 7975,
+   "old": "1f5281ed88068080008000",
+   "new": "0b5281ed88068080008d40"
+  },
+  {
+   "off": 8457,
+   "old": "1fd1fc80008800",
+   "new": "15d1fc80009040"
+  },
+  {
+   "off": 8649,
+   "old": "1fd1fc80009000",
+   "new": "15d1fc800095c0"
+  },
+  {
+   "off": 9139,
+   "old": "0f",
+   "new": "09"
+  },
+  {
+   "off": 9166,
+   "old": "e78848780030ed8a9480068280009800",
+   "new": "c4fc0150487801200682800080004e71"
+  },
+  {
+   "off": 9192,
+   "old": "203c0030008072302540000424bcdead000125410020",
+   "new": "4ef940161afc4e714e714e714e714e714e714e714e71"
+  },
+  {
+   "off": 9247,
+   "old": "0b",
+   "new": "05"
+  },
+  {
+   "off": 9657,
+   "old": "0f",
+   "new": "09"
+  },
+  {
+   "off": 9680,
+   "old": "2a01e78ded89928506818000980023c1404af45ce7882239404af45cd2802004e788",
+   "new": "c2fc01504e714e7106818000800023c1404af45c4ef940161b284e714e714e714e71"
+  },
+  {
+   "off": 9734,
+   "old": "206f00242241",
+   "new": "4ef940161b5a"
+  },
+  {
+   "off": 9794,
+   "old": "721320402004e3ace788",
+   "new": "4ef940161b444e714e71"
+  },
+  {
+   "off": 9896,
+   "old": "20394013a734",
+   "new": "4eb940161d78"
+  },
+  {
+   "off": 10473,
+   "old": "3c40380000",
+   "new": "39401904d4"
+  },
+  {
+   "off": 18972,
+   "old": "2002e788eb8ad48006824013a760",
+   "new": "4eb9401905204e714e714e714e71"
+  },
+  {
+   "off": 19076,
+   "old": "2002e788eb8ad48006824013a760",
+   "new": "4eb9401905204e714e714e714e71"
+  },
+  {
+   "off": 209113,
+   "old": "004e38720541f940004e04b280670c487800054e90487800016008487800024e9042a74e92",
+   "new": "1905a0518f4e714e714e714e714e714e714e714e714e714e714e714e714e714e714e714e71"
+  },
+  {
+   "off": 209182,
+   "old": "223c40127dedb4806606223c40127de9",
+   "new": "4eb9401905784e714e714e714e714e71"
+  },
+  {
+   "off": 349932,
+   "old": "45f940dc2470428043f940dc24742040d1fc8000c69047f2080049f10800508021530100215401040c800000010066de",
+   "new": "4ef940161d344e714e714e714e714e714e714e714e714e714e714e714e714e714e714e714e714e714e714e714e714e71"
+  },
+  {
+   "off": 350460,
+   "old": "428045f940dc",
+   "new": "4ef940161d56"
+  },
+  {
+   "off": 690655,
+   "old": "190234",
+   "new": "15a590"
+  },
+  {
+   "off": 728169,
+   "old": "161af0",
+   "new": "15a590"
+  },
+  {
+   "off": 1447676,
+   "old": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+   "new": "72003239401904d8c2fc0006254100202001484042400080000000802540000424bcdead00014ef9400027fec0f9401904d82239404af45cd2802004c0f9401904d84ef9400029f220402004c0f9401904d82800484442444ef940002a4c4fefff3c48ef7fff0080a9872f4700bca1872f4700c0a93c000000a022414a846f000162266f00e84a39401904da6700018eb7fc40dc2310660001664bf9409684f84df9401904dc204f7a1fca8374102e1d2c1e9e86ea87214700404c057800de8620c7538266e845f980001b4849f98000c8902a4f7a1fca8341f25c00e78d2c4d74062e102c2e0020ac070900a1c6dc864c86dc864c86e08e12c6e08e12c6e08e12c62e102c1eac070900a1c6dc864c86dc864c86e08e12c6e08e12c6e08e12c641e8008053826600ffba2e3358002c2e0020ac070900a1c6dc864c86dc864c86e08e12c6e08e12c6e08e12c62e3358042c1eac070900a1c6dc864c86dc864c86e08e12c6e08e12c6e08e12c62e3458002c2e0020ac070900a1c6dc864c86dc864c86e08e12c6e08e12c6e08e12c62e3458042c16ac070900a1c6dc864c86dc864c86e08e12c6e08e12c6e08e12c62c4f74102e2e0040df9e538266f67e1fce837c1fbe8666144df9409684f841f9401904dc741020de538266fa528353846600fef42e2f00c0a1072e2f00bca9074cef7fff00804fef00c44ef940002a26c8f9401904d87e002c07e08e12c6e08e12c6e08e12c6578466ee6000ffc82a03e78d41f358002e1802c722c72e1802c722c7538466f06000ffac41f98000c79043f940dc247045f940dc2310704024d020d9538066f84ef940055b1c4a39401904da661441f98000c69043f940dc2310704022d8538066fa4ef940055d2a4feffff448d7010641f980008d407200740c0828000700076702548141e80040538266ee700b928020017405e5a0d0b94013a7344cd701064fef000c4e75"
+  },
+  {
+   "off": 1637956,
+   "old": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+   "new": "40002ca840002c56401a040a4019026c000001480000000000000000401903b4000000190000000109024801050100c003080b0003010020000904000000010120000924010002085d000008240a0101010000112402030101000102000000000000000011240205020600011000000000090000000c24030401030002010000000c24030601010005010000001224060203000000000000000000000000000904010000010220000904010102010220001024010300010100000002000000000006240201042007050305380001082501000000000007058211040001090402000001022000090402010101022000102401060001010000001000000000090624020103180705832550010108250100000000000904030000010100000924010001090001040904040002010300000724010001410006240201010006240202020009240301030102010009240302040101010009050102000200000005250101010905810200020000000525010103401a013a401a010a401a00c2401a00f0401a009c401a0076401a004e401a0026401a000040190418401904224019042c40190436401904404019044a401904544019045e40190468401904724019047c4019048640190490401904a0401904b0401904c20a035400310020004c000a0354003100200052000a035400320020004c000a0354003200200052000a035400330020004c000a0354003300200052000a035400340020004c000a0354003400200052000a035400350020004c000a0354003500200052000a035400360020004c000a0354003600200052001003440065006c006100790020004c001003440065006c006100790020005200120352006500760065007200620020004c00120352006500760065007200620020005200403800000008000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000413136002f0841faffb07005b48066281039404f66080c000002661c243c40190244203c41500000208070303140000470011140000660202002e788eb8ad48006824013a760203c40380000208070083140000442280006205f4e75b480661c1239404f66080c0100026608223c4019051c4e75223c40127de94e75223c40127ded4e754feffff848d704044eb940004e387205b28066441039404f66080c0000026726487800024eb9400461c6588f4eb940004d9a74056100ff4a23c2404af8384eb940004db4602a487800004eb9400461c6588f487800026010487800014eb9400461c6588f487800054eb940004e04588f4cd704044fef00084e75"
+  }
+ ]
+}

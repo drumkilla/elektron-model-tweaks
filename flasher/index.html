@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>model-tweaks flasher</title>
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <header>
+    <p class="kicker">Elektron Model:Cycles · Model:Samples · OS 1.13</p>
+    <h1>model<span class="accent">-</span>tweaks</h1>
+    <p class="lede">Firmware tweaks for the Elektron <strong>Model:Cycles</strong> and
+      <strong>Model:Samples</strong>, OS 1.13. Everything runs in this page: your
+      firmware file never leaves your computer.</p>
+  </header>
+
+  <section id="step-load" class="step">
+    <h2><span class="n">01</span> Your firmware</h2>
+    <p>Download the original OS 1.13 <code>.syx</code> for your device from
+      <a href="https://www.elektron.se/support-downloads" target="_blank" rel="noopener">Elektron's support pages</a>
+      and drop it here. No firmware is hosted on this site.</p>
+    <label id="drop" class="drop">
+      <input id="file" type="file" accept=".syx">
+      <span id="drop-text">Drop the <code>.syx</code> here, or click to choose it</span>
+    </label>
+    <p id="engine" class="status">Loading the engine (Python in the browser, about 10 MB, once)…</p>
+    <div id="fwinfo" class="info" hidden></div>
+  </section>
+
+  <section id="step-pick" class="step" hidden>
+    <h2><span class="n">02</span> Tweaks</h2>
+    <div id="tweaks"></div>
+    <button id="build" type="button">Build the firmware</button>
+    <p id="build-status" class="status"></p>
+  </section>
+
+  <section id="step-get" class="step" hidden>
+    <h2><span class="n">03</span> Get it onto the device</h2>
+    <div id="result" class="info"></div>
+    <button id="download" type="button" class="primary">Download the .syx</button>
+    <p class="hint">Recommended: send the file with <strong>Elektron Transfer</strong>, the fastest
+      way. Any SysEx tool works too.</p>
+
+    <details id="midi">
+      <summary>Or send it from this page over USB MIDI (Chrome / Edge)</summary>
+      <ol>
+        <li>Connect the device over USB and open its OS upgrade screen
+          (<strong>CONFIG &gt; UPGRADE</strong>) so it waits for the firmware.</li>
+        <li>Pick its MIDI port and press <em>Send</em>. Keep this tab in front until it is done.</li>
+      </ol>
+      <div class="row">
+        <button id="midi-connect" type="button">Find MIDI ports</button>
+        <select id="midi-port" hidden></select>
+      </div>
+      <div class="row">
+        <label for="pace">Speed margin</label>
+        <input id="pace" type="number" min="1" step="0.1" value="1.4">
+        <span class="hint">Pace of a MIDI cable times this. Raise it if the transfer stalls.</span>
+      </div>
+      <div class="row">
+        <button id="send" type="button" disabled>Send</button>
+        <button id="stop" type="button" hidden>Stop</button>
+      </div>
+      <progress id="progress" max="1" value="0" hidden></progress>
+      <p id="send-status" class="status"></p>
+    </details>
+  </section>
+
+  <section class="step notes">
+    <h2>Before you flash</h2>
+    <ul>
+      <li>Modifying the firmware voids your warranty and could brick your device. You do this at
+        your own risk.</li>
+      <li>Make sure you can reach <strong>STARTUP MENU</strong>: power off, hold <strong>FUNC</strong>,
+        power on, then <em>OS UPGRADE</em>. That is the way back to stock firmware.</li>
+      <li>Back up your projects first.</li>
+      <li>Every check of the command-line tool runs here too: the file is parsed in full, the
+        MAIN OS must match the known original, every patched region is confirmed first, and the
+        built file is re-verified (packet checksums, container checksums, HMAC) before you can
+        download it.</li>
+    </ul>
+    <p class="hint">Source, documentation and the command-line version:
+      <a href="https://github.com/drumkilla/elektron-model-tweaks" target="_blank" rel="noopener">the repository</a>. Not affiliated with Elektron.
+      The 16-channel USB audio tweak builds on
+      <a href="https://github.com/scottmetoyer/ms-multi-output" target="_blank" rel="noopener">ms-multi-output</a>
+      and <a href="https://github.com/18nelli18/Modded-Cycles" target="_blank" rel="noopener">Modded-Cycles</a>.</p>
+  </section>
+  <section class="step others">
+    <h2>Check out other mods</h2>
+    <ul class="links">
+      <li><a href="https://18nelli18.github.io/Modded-Cycles/flasher/" target="_blank" rel="noopener">Modded-Cycles</a>
+        <span>by 18nelli. Model:Cycles: multitrack USB audio, Syntakt engines, an arpeggiator, Model-TG and more,
+          in a web flasher of its own.</span></li>
+      <li><a href="https://github.com/TinyGregAudio/Model-TG" target="_blank" rel="noopener">Model-TG</a>
+        <span>by TinyGregAudio. Model:Cycles: a Sampler machine, resampling, a retrig page with master FX,
+          slide trigs and more.</span></li>
+      <li><a href="https://elektronmods.com/" target="_blank" rel="noopener">elektronmods.com</a>
+        <span>for everyone who loves tinkering with their Elektron devices: mods, patches, tools, hardware
+          modifications and technical research.</span></li>
+    </ul>
+  </section>
+</main>
+<script src="https://cdn.jsdelivr.net/pyodide/v314.0.7/full/pyodide.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

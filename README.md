@@ -4,7 +4,9 @@ Small firmware tweaks for the Elektron **Model:Cycles** and **Model:Samples**
 (OS 1.13). No firmware is distributed here: you supply **your own** `.syx`, the
 script applies the tweaks you pick and writes a new file next to it.
 
-**Python 3 is the only requirement.**
+**Python 3 is the only requirement** — or none at all: use the
+**[web flasher](https://drumkilla.github.io/elektron-model-tweaks/flasher/)** in Chrome, Edge,
+Firefox or Safari.
 
 These tweaks are also available as a part of these projects:
 
@@ -25,6 +27,19 @@ These tweaks are also available as a part of these projects:
 3. Toggle tweaks by number, press Enter.
 4. `<name>_mod.syx` appears beside the original. Send that one with Elektron
    Transfer, SysEx Librarian, or any SysEx tool.
+
+### In the browser
+
+The [web flasher](flasher/) does the same in a page: drop your `.syx`, pick the
+tweaks, download the built file (then send it with **Elektron Transfer**, the
+fastest way), or send it straight from the page over USB MIDI in Chrome or Edge.
+It runs this repository's own `tweak.py` and `mtlib` unchanged, in the browser
+through [Pyodide](https://pyodide.org); the firmware never leaves your computer.
+
+To run it locally: `python3 -m http.server` in this folder, then open
+<http://localhost:8000/flasher/>. Published with GitHub Pages from the repository
+root (`.nojekyll` keeps `mtlib/__init__.py` served). After adding or removing a
+tweak, run `python3 flasher/make_manifest.py`.
 
 Without the menu:
 
@@ -62,7 +77,46 @@ A selected name in the sound/sample/folder browser scrolls left when it does not
 fit: about 0.17 s per character, with a ~0.5 s pause at each end. A name that
 already fits stays put.
 
-The three are independent; any combination works.
+### 16-channel USB audio — `usb16`
+
+Adds a third choice to **CONFIG > DEVICE > USB MODE**, which now cycles
+`A+M` → `A16` → `MID`:
+
+| USB MODE | Sent to the computer |
+|---|---|
+| `A+M` | stock: the stereo mix, plus MIDI |
+| `A16` | 16 channels, plus MIDI |
+| `MID` | MIDI only |
+
+In `A16` the channels are, at 48 kHz / 24 bit:
+
+| Channels | Name on the host | Content |
+|---|---|---|
+| 1–12 | `T1 L` … `T6 R` | the six tracks as stereo pairs, **after VOL and PAN** |
+| 13–14 | `Delay L`, `Delay R` | the delay return (wet output) |
+| 15–16 | `Reverb L`, `Reverb R` | the reverb return (wet output) |
+
+Each channel is exactly what the mixer adds to the main bus, with the same gain
+curve and master gain, so the 16 channels sum to the stereo mix (short of
+master-bus clipping). A track muted on the device is silent on its channels; its
+delay and reverb tail stays on 13–16, as in the stereo mix.
+
+* After flashing the device starts in `A+M`, which behaves as stock. Pick `A16`
+  once; it is kept across power cycles. Switching reconnects the device, so the
+  DAW may need the input device selected again.
+* Recording and playback should run on **one clock**: use the Model as both the
+  input and the output device, or an aggregate device with drift correction
+  (macOS Audio MIDI Setup). Two separate USB devices without drift correction
+  drop host buffers every few minutes.
+* Tested on Model:Cycles and Model:Samples hardware with macOS. Windows is
+  untested.
+
+Based on [ms-multi-output](https://github.com/scottmetoyer/ms-multi-output) by
+Scott Metoyer and the work on it in
+[Modded-Cycles](https://github.com/18nelli18/Modded-Cycles) by 18nelli; see
+[Credits](#credits).
+
+All four tweaks are independent; any combination works.
 
 ---
 
@@ -116,6 +170,7 @@ mtlib/syx.py           7-bit SysEx transport
 mtlib/aplib.py         aPLib codec: decode to ops, re-emit
 mtlib/container.py     ELE3: parse, rebuild, checksums, HMAC
 tweaks/<firmware>/     the tweaks themselves
+flasher/               the web flasher: page, Pyodide glue (web.py), file list
 ```
 
 A tweak is plain JSON you can read yourself — offset, expected original bytes,
@@ -134,10 +189,36 @@ Machines in any way. Elektron, Model:Cycles and Model:Samples are their
 trademarks. No Elektron firmware or code is distributed here — the tweaks are
 applied to a file you supply yourself.
 
+## Credits
+
+Building scripts are based on
+**[elektron-firmware-tool](https://github.com/mischa85/elektron-firmware-tool)** (MIT) by **mischa85**.
+
+The 16-channel USB audio tweak (`usb16`) builds on:
+
+* **[scottmetoyer/ms-multi-output](https://github.com/scottmetoyer/ms-multi-output)**
+  by Scott Metoyer — the original 6-channel USB mod for the Model:Samples and
+  Model:Cycles: the USB driver hook points, the descriptor and queue-head
+  changes, and the method. MIT License, Copyright (c) 2026 Scott Metoyer.
+* **[18nelli18/Modded-Cycles](https://github.com/18nelli18/Modded-Cycles)** by
+  18nelli — the further work on it for the Model:Cycles: keeping USB OS updates
+  working, freeing sprite masks as code space, and the analysis of the USB queue
+  and of the dropouts.
+
+On top of that, `usb16` takes the channels after the mixer's VOL and PAN as stereo
+pairs, adds the delay and reverb returns, moves to 24 bit with the transfer ring
+in SRAM and a fill-level loop on the packet rate, names the channels, adds the
+`A16` USB mode next to the stock stereo, and covers the Model:Samples as well.
+
 ## License
 
 MIT, see [LICENSE](LICENSE). The license covers this tooling only, not the
 firmware it is applied to.
 
-## Credits
-Building scripts are based on **[elektron-firmware-tool](https://github.com/mischa85/elektron-firmware-tool)** (MIT) by **mischa85**
+Third-party work this repository builds on:
+
+| Project | Used for | License |
+|---|---|---|
+| [mischa85/elektron-firmware-tool](https://github.com/mischa85/elektron-firmware-tool) | the basis of the building scripts | MIT |
+| [scottmetoyer/ms-multi-output](https://github.com/scottmetoyer/ms-multi-output) | the basis of the `usb16` tweak | MIT, Copyright (c) 2026 Scott Metoyer — full text in [LICENSE-ms-multi-output](LICENSE-ms-multi-output) |
+| [18nelli18/Modded-Cycles](https://github.com/18nelli18/Modded-Cycles) | further work the `usb16` tweak builds on | no license file published (checked 2026-10-04); credited here |
