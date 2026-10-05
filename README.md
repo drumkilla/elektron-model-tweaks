@@ -66,10 +66,11 @@ Holding FUNC to mute tracks behaves exactly as it does in stock firmware.
 
 ### Trig preview — `trig-preview`
 
-With the sequencer **stopped**, hold a step (trig button) and press **PAGE**: the step sounds
+With the sequencer **stopped or paused**, hold a step (trig button) and press **PAGE**: the step sounds
 with its own note, length, p-locks and sound-lock. The page does not turn. It
 sounds regardless of the trig condition and probability, and through a muted
-track.
+track. Paused (PLAY pressed during playback) counts as stopped; thanks to
+18nelli for this fix.
 
 ### Scroll long names — `browser-scroll`
 
