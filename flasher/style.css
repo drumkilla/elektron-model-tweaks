@@ -146,3 +146,15 @@ progress::-moz-progress-bar { background: var(--accent); }
 .tweak-links { display: flex; flex-wrap: wrap; gap: 8px 18px; margin-top: 10px; }
 .tweak-links a { font-size: 10.5px; letter-spacing: 0.14em; text-transform: uppercase; }
 .tweak-links a::before { content: "\25B6\FE0E  "; font-size: 9px; }
+
+/* changelog */
+#version { color: var(--accent); }
+.changelog details { margin-top: 10px; border-top: 1px dashed var(--rule); padding-top: 10px; }
+.changelog details:first-child { margin-top: 0; border-top: 0; padding-top: 0; }
+.changelog summary b { font-family: var(--mono); font-weight: 500; color: var(--ink); letter-spacing: 0.06em; }
+.changelog summary span { color: var(--ink-faint); margin-left: 8px; }
+.changelog ul { margin: 10px 0 4px; padding-left: 18px; color: var(--ink-dim); }
+.changelog li { margin: 6px 0; }
+.changelog li::marker { color: var(--accent); }
+.changelog p { color: var(--ink-dim); margin: 10px 0 4px; }
+.changelog strong { color: var(--ink); font-weight: 500; }

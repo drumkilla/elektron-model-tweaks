@@ -271,6 +271,62 @@ async function send() {
 }
 
 // ----------------------------------------------------------------------------
+// The version and the changelog: CHANGELOG.md, in the format it keeps
+// ("## <version> — <date>", "- " items continued by indented lines, paragraphs,
+// **bold** and `code`). The newest entry is open, the older ones folded.
+// ----------------------------------------------------------------------------
+function inline(text) {
+  const esc = text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  return esc.replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>").replace(/`(.+?)`/g, "<code>$1</code>")
+            .replace(/\[(.+?)\]\((https?:[^)\s]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>');
+}
+
+function parseChangelog(md) {
+  const entries = [];
+  let cur = null, item = null, para = null;
+  const flush = () => {
+    if (item) cur.blocks.push({ li: item.join(" ") });
+    if (para) cur.blocks.push({ p: para.join(" ") });
+    item = para = null;
+  };
+  for (const line of md.split("\n")) {
+    const h = line.match(/^## (\S+)\s*[—-]\s*(.+)$/);
+    if (h) { if (cur) flush(); cur = { version: h[1], date: h[2].trim(), blocks: [] }; entries.push(cur); continue; }
+    if (!cur) continue;                                   // the intro above the first entry
+    if (/^- /.test(line)) { flush(); item = [line.slice(2).trim()]; continue; }
+    if (/^\s+\S/.test(line) && item) { item.push(line.trim()); continue; }
+    if (!line.trim()) { flush(); continue; }
+    if (item) flush();
+    (para = para || []).push(line.trim());
+  }
+  if (cur) flush();
+  return entries;
+}
+
+async function loadChangelog() {
+  try {
+    const r = await fetch("../CHANGELOG.md", { cache: "no-cache" });
+    if (!r.ok) return;
+    const entries = parseChangelog(await r.text());
+    if (!entries.length) return;
+    $("version").textContent = " · v" + entries[0].version;
+    $("changelog-body").innerHTML = entries.map((e, i) => {
+      let html = "", list = false;
+      for (const b of e.blocks) {
+        if (b.li !== undefined && !list) { html += "<ul>"; list = true; }
+        if (b.li === undefined && list) { html += "</ul>"; list = false; }
+        html += b.li !== undefined ? "<li>" + inline(b.li) + "</li>" : "<p>" + inline(b.p) + "</p>";
+      }
+      if (list) html += "</ul>";
+      return `<details${i === 0 ? " open" : ""}><summary><b>${inline(e.version)}</b> <span>${inline(e.date)}</span>` +
+             `</summary>${html}</details>`;
+    }).join("");
+    $("changelog").hidden = false;
+  } catch (e) { /* the page works without it */ }
+}
+loadChangelog();
+
+// ----------------------------------------------------------------------------
 $("file").addEventListener("change", (e) => takeFile(e.target.files[0]));
 const drop = $("drop");
 drop.addEventListener("dragover", (e) => { e.preventDefault(); drop.classList.add("over"); });

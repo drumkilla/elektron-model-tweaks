@@ -9,6 +9,7 @@ needed: no Ghidra, no compiler, no downloads.
     python3 tweak.py -i FW.syx --all       apply everything
     python3 tweak.py -i FW.syx -t trig-preview,browser-scroll
     python3 tweak.py --verify FW_mod.syx   recheck a finished file
+    python3 tweak.py --version             which release this is (CHANGELOG.md)
 """
 
 import argparse
@@ -25,6 +26,7 @@ from mtlib import aplib, container            # noqa: E402
 from mtlib.syx import unwrap, wrap, BYTES_PER_MSG   # noqa: E402
 
 TWEAKS_DIR = os.path.join(HERE, 'tweaks')
+__version__ = '1.2.0'             # the top entry of CHANGELOG.md (make_manifest.py --check)
 
 
 # --------------------------------------------------------------------------- #
@@ -234,10 +236,14 @@ def main():
     ap.add_argument('--list', action='store_true')
     ap.add_argument('--verify')
     ap.add_argument('-h', '--help', action='store_true')
+    ap.add_argument('--version', action='store_true')
     a = ap.parse_args()
 
     if a.help:
         print(__doc__)
+        return
+    if a.version:
+        print('model-tweaks %s' % __version__)
         return
     if a.verify:
         print('\n%s' % os.path.basename(a.verify))
@@ -247,6 +253,7 @@ def main():
     if not cat:
         die('the tweaks/ folder is empty')
     if a.list:
+        print('model-tweaks %s' % __version__)
         for (dev, osv), e in sorted(cat.items()):
             print('\n%s OS %s' % (dev, osv))
             for t in e['tweaks']:
@@ -261,7 +268,8 @@ def main():
 
     digest = hashlib.sha256(fw['raw']).hexdigest()
     exact = digest == entry['meta']['stock_syx_sha256']
-    print('\n  File     : %s' % os.path.basename(path))
+    print('\n  model-tweaks %s' % __version__)
+    print('  File     : %s' % os.path.basename(path))
     print('  Firmware : %s OS %s' % key)
     print('  SHA-256  : %s' % digest)
     if exact:

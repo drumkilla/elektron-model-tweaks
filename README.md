@@ -8,6 +8,9 @@ script applies the tweaks you pick and writes a new file next to it.
 **[web flasher](https://drumkilla.github.io/elektron-model-tweaks/flasher/)** in Chrome, Edge,
 Firefox or Safari.
 
+What changed in each release: [CHANGELOG.md](CHANGELOG.md), also shown in the web
+flasher; `python3 tweak.py --version` prints the version you have.
+
 These tweaks are also available as a part of these projects:
 
    * **[Modded Cycles](https://github.com/18nelli18/Modded-Cycles) by 18nelli18** - Model:Cycles only atm.
