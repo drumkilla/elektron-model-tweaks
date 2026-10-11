@@ -1,0 +1,24 @@
+{
+ "id": "core", "version": "0.1",
+ "license": "GPL-2.0-or-later",
+ "title": "core", "category": "Framework", "author": "drumkilla",
+ "description": "The boot copier and the hook bus for Model:Samples: every other mod needs it. On its own it changes nothing the unit does.",
+ "device": "model-samples", "os": "1.13",
+ "sources": ["../core/core.s"],
+ "defsym": {
+  "DRAWALL": "0x40075c7a",
+  "KEYDISP": "0x40006364",
+  "ENCDISP": "0x400063be",
+  "NO_DTIM0": "1",
+  "VBR_FN": "0x4000045c",
+  "VBR_FN2": "0x400004b2"
+ },
+ "sites": [
+  {"addr": "0x4000052c", "stock": "4ebaff2e4ebaff80", "op": "jsr", "target": "boot"},
+  {"addr": "0x40007e04", "stock": "4eb940075c44", "op": "jsr", "target": "core_tick"},
+  {"addr": "0x40007e70", "stock": "4eb940075c7a", "op": "jsr", "target": "core_draw"},
+  {"addr": "0x4000899a", "stock": "4eb940006364", "op": "jsr", "target": "core_key"},
+  {"addr": "0x400089ee", "stock": "4eb9400063be", "op": "jsr", "target": "core_enc"}
+ ],
+ "collections": {"ev_tick": 4, "ev_draw": 4, "ev_key": 4, "ev_enc": 4}
+}

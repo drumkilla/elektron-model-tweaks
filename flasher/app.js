@@ -1,7 +1,8 @@
 /* model-tweaks web flasher.
  *
- * The firmware is built by the repository's own tweak.py and mtlib, run unchanged
- * in Pyodide (flasher/web.py is the glue). The page loads them from the repository
+ * The firmware is built by elekloader's linker (its copy in elekloader/, GPL-2.0)
+ * from the .elemod mods in mods/<device>/, run unchanged in Pyodide (flasher/web.py
+ * is the glue). The page loads them from the repository
  * (flasher/files.json lists them), reads the user's .syx locally, and offers the
  * result as a download or sends it over Web MIDI. Nothing is uploaded anywhere.
  */
@@ -91,23 +92,37 @@ function addRow(dl, k, v) {
 }
 
 // ----------------------------------------------------------------------------
-// Step 2: pick tweaks, build
+// Step 2: pick mods, build
 // ----------------------------------------------------------------------------
 function showTweaks(tweaks) {
   const box = $("tweaks");
   box.innerHTML = "";
   for (const t of tweaks) {
-    // The whole card is the label, so clicking anywhere toggles it.
-    const card = document.createElement("label");
+    // The checkbox toggles the mod; a click anywhere else on the card shows its details.
+    const card = document.createElement("div");
     card.className = "tweak";
+    card.tabIndex = 0;
+    card.dataset.id = t.id;
     const cb = document.createElement("input");
     cb.type = "checkbox";
     cb.checked = true;
     cb.value = t.id;
+    cb.setAttribute("aria-label", "Include " + t.name);
+    cb.addEventListener("click", (e) => e.stopPropagation());
+    card.addEventListener("click", () => showDetails(t, card));
+    card.addEventListener("keydown", (e) => {
+      if (e.target === card && (e.key === "Enter" || e.key === " ")) { e.preventDefault(); showDetails(t, card); }
+    });
     const body = document.createElement("div");
     const title = document.createElement("div");
     title.className = "tweak-name";
     title.textContent = t.name;
+    if (t.version) {                     // the mod's version: smaller, not the accent
+      const ver = document.createElement("span");
+      ver.className = "tweak-version";
+      ver.textContent = t.version;
+      title.append(" ", ver);
+    }
     const ul = document.createElement("ul");
     for (const line of t.description) {
       const li = document.createElement("li");
@@ -143,8 +158,83 @@ function showTweaks(tweaks) {
     card.append(cb, body);
     box.appendChild(card);
   }
+  resetDetails();
   setStatus("build-status", "");
   $("step-pick").hidden = false;
+}
+
+// ----------------------------------------------------------------------------
+// A mod's details: docs/mods/<id>.md (written for the page, with screenshots and
+// animations of the device in docs/mods/media/), in the panel beside the list, or under
+// the card on a narrow screen. Markdown: # / ## / ### headings, paragraphs, "- " lists,
+// ![caption](media/x.png) images (a line of their own), **bold**, `code`, [links](...).
+// ----------------------------------------------------------------------------
+const DOCS = "../docs/mods/";
+const docCache = {};
+
+function resetDetails() {
+  const d = $("details");
+  d.innerHTML = '<p class="hint">Click a mod to see what it does, with pictures of the screen.</p>';
+  $("details-col").appendChild(d);
+  for (const c of document.querySelectorAll(".tweak.selected")) c.classList.remove("selected");
+}
+
+function renderDoc(md) {
+  const out = [];
+  let list = null, para = null;
+  const flush = () => {
+    if (para) out.push("<p>" + inline(para.join(" ")) + "</p>");
+    if (list) out.push("<ul>" + list.map((li) => "<li>" + inline(li) + "</li>").join("") + "</ul>");
+    para = list = null;
+  };
+  for (const raw of md.split("\n")) {
+    const line = raw.replace(/\s+$/, "");
+    let m;
+    if (!line.trim()) { flush(); continue; }
+    if ((m = line.match(/^(#{1,3})\s+(.*)$/))) {
+      flush();
+      const n = Math.min(m[1].length + 2, 5);           // # -> h3, ## -> h4, ### -> h5
+      out.push("<h" + n + ">" + inline(m[2]) + "</h" + n + ">");
+    } else if ((m = line.match(/^!\[(.*?)\]\(([^)\s]+)\)$/))) {
+      flush();
+      const src = /^https?:/.test(m[2]) ? m[2] : DOCS + m[2];
+      out.push('<figure><img src="' + src.replace(/"/g, "&quot;") + '" alt="" loading="lazy">' +
+               (m[1] ? "<figcaption>" + inline(m[1]) + "</figcaption>" : "") + "</figure>");
+    } else if ((m = line.match(/^\s*[-*]\s+(.*)$/))) {
+      if (para) flush();
+      (list = list || []).push(m[1]);
+    } else if (list && /^\s{2,}\S/.test(raw)) {
+      list[list.length - 1] += " " + line.trim();      // a list item's continuation
+    } else {
+      if (list) flush();
+      (para = para || []).push(line.trim());
+    }
+  }
+  flush();
+  return out.join("");
+}
+
+async function showDetails(t, card) {
+  for (const c of document.querySelectorAll(".tweak.selected")) c.classList.remove("selected");
+  card.classList.add("selected");
+  const d = $("details");
+  if (window.matchMedia("(max-width: 900px)").matches) card.after(d);   // under the card
+  else $("details-col").appendChild(d);
+  d.dataset.id = t.id;
+  let html = docCache[t.id];
+  if (html === undefined) {
+    d.innerHTML = '<p class="hint">Loading…</p>';
+    try {
+      const r = await fetch(DOCS + t.id + ".md", { cache: "no-cache" });
+      html = r.ok ? renderDoc(await r.text()) : null;
+    } catch (e) {
+      html = null;
+    }
+    docCache[t.id] = html;
+  }
+  if (d.dataset.id !== t.id) return;                     // another one was picked meanwhile
+  d.innerHTML = html || ("<h3>" + inline(t.name) + "</h3><p>" + inline(t.description.join(" ")) + "</p>");
+  if (!window.matchMedia("(max-width: 900px)").matches) d.scrollTop = 0;
 }
 
 async function build() {
@@ -170,7 +260,7 @@ async function build() {
   }
   st.out = st.py.FS.readFile("/tmp/out.syx");
   st.outName = res.name;
-  setStatus("build-status", "Built: " + ids.length + " tweak(s), " + res.changed + " MAIN OS bytes changed.", "ok");
+  setStatus("build-status", "Built: " + ids.length + " mod(s); linked with what they need: " + res.mods.join(", ") + ".", "ok");
   const r = $("result");
   r.innerHTML = "";
   const dl = document.createElement("dl");

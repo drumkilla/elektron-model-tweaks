@@ -15,9 +15,9 @@
   <header>
     <p class="kicker">Elektron Model:Cycles · Model:Samples<span id="version"></span></p>
     <h1>model<span class="accent">-</span>tweaks</h1>
-    <p class="lede">Firmware tweaks for the Elektron <strong>Model:Cycles</strong> and
-      <strong>Model:Samples</strong>, OS 1.13. Everything runs in this page: your
-      firmware file never leaves your computer.</p>
+    <p class="lede">Firmware mods for the Elektron <strong>Model:Cycles</strong> and
+      <strong>Model:Samples</strong>, OS 1.13, linked into your own firmware file. Everything runs
+      in this page: your firmware never leaves your computer.</p>
   </header>
 
   <section id="step-load" class="step">
@@ -34,10 +34,15 @@
   </section>
 
   <section id="step-pick" class="step" hidden>
-    <h2><span class="n">02</span> Tweaks</h2>
-    <div id="tweaks"></div>
-    <button id="build" type="button">Build the firmware</button>
-    <p id="build-status" class="status"></p>
+    <h2><span class="n">02</span> Mods</h2>
+    <div class="pick">
+      <div>
+        <div id="tweaks"></div>
+        <button id="build" type="button">Build the firmware</button>
+        <p id="build-status" class="status"></p>
+      </div>
+      <aside id="details-col"><div id="details" class="details"></div></aside>
+    </div>
   </section>
 
   <section id="step-get" class="step" hidden>
@@ -80,10 +85,10 @@
       <li>Make sure you can reach <strong>STARTUP MENU</strong>: power off, hold <strong>FUNC</strong>,
         power on, then <em>OS UPGRADE</em>. That is the way back to stock firmware.</li>
       <li>Back up your projects first.</li>
-      <li>Every check of the command-line tool runs here too: the file is parsed in full, the
-        MAIN OS must match the known original, every patched region is confirmed first, and the
-        built file is re-verified (packet checksums, container checksums, HMAC) before you can
-        download it.</li>
+      <li>The mods are linked by <a href="https://github.com/irpina/elekloader" target="_blank" rel="noopener">elekloader</a>
+        (irpina and contributors; its copy is in <code>elekloader/</code>, GPL-2.0): it checks every patched
+        region against your stock firmware first, refuses mods that collide, and re-verifies the built
+        file (checksums, HMAC) before you can download it. A mod's requirements are added by themselves.</li>
     </ul>
     <p class="hint">Source, documentation and the command-line version:
       <a href="https://github.com/drumkilla/elektron-model-tweaks" target="_blank" rel="noopener">the repository</a>. Not affiliated with Elektron.
@@ -112,10 +117,11 @@
   <section class="step others">
     <h2>My stuff</h2>
     <ul class="links">
-      <li><a href="https://www.youtube.com/@TheDrumkillaMusic" target="_blank" rel="noopener">YouTube</a>
-        <span>@TheDrumkillaMusic</span></li>
+      <li><a href="https://www.youtube.com/@TheDrumkillaMusic" target="_blank" rel="noopener">YouTube</a></li>
       <li><a href="https://wdak.space" target="_blank" rel="noopener">wdak.space</a>
         <span>website</span></li>
+        <li><a href="https://www.donationalerts.com/r/wdak" target="_blank" rel="noopener">Donate</a>
+        <span>support development</span></li>
     </ul>
   </section>
 </main>

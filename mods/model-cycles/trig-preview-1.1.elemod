@@ -1,0 +1,252 @@
+{
+ "elemod": 2,
+ "id": "trig-preview",
+ "version": "1.1",
+ "title": "Trig preview",
+ "description": "Hold a trig and press [PAGE] on a stopped or paused sequencer to hear that step, with its note, length, p-locks and sound lock, past its condition, probability and the track mute.",
+ "category": "Sequencer",
+ "author": "drumkilla",
+ "license": "MIT",
+ "target": {
+  "device": "model-cycles",
+  "product": "Model:Cycles",
+  "os": "1.13",
+  "syx_sha256": "44fe586269631a0ca7da25a3383fc6733c314809505fc3cc52f1e0ed9800640c",
+  "section3_sha256": "cc99d4f0175d34d1e91d046e6ec85a5e8ab58ab9edbb3c24406acd48cb99ee98",
+  "section3_len": 1744192
+ },
+ "sections": {
+  ".run": {
+   "align": 4,
+   "len": 368,
+   "parts": [
+    [
+     "stock",
+     "0x40017706",
+     8
+    ],
+    [
+     "stock",
+     "0x40027ffe",
+     8
+    ],
+    [
+     "stock",
+     "0x4001c2b4",
+     8
+    ],
+    [
+     "hex",
+     "0140"
+    ],
+    [
+     "stock",
+     "0x40027ffe",
+     8
+    ],
+    [
+     "stock",
+     "0x4001c1e6",
+     8
+    ],
+    [
+     "hex",
+     "012e4eb94005481a08000000"
+    ],
+    [
+     "stock",
+     "0x4002fd56",
+     8
+    ],
+    [
+     "hex",
+     "f9a826402f0b"
+    ],
+    [
+     "stock",
+     "0x4001a106",
+     10
+    ],
+    [
+     "hex",
+     "670001082f0b"
+    ],
+    [
+     "stock",
+     "0x4001a11c",
+     10
+    ],
+    [
+     "hex",
+     "660000f82f0b"
+    ],
+    [
+     "stock",
+     "0x40007080",
+     12
+    ],
+    [
+     "stock",
+     "0x400a5684",
+     8
+    ],
+    [
+     "stock",
+     "0x40006708",
+     8
+    ],
+    [
+     "hex",
+     "588f"
+    ],
+    [
+     "stock",
+     "0x4000705e",
+     8
+    ],
+    [
+     "hex",
+     "588f2400203940a7887c670000c22840203940a78888670000b62002c0fc02d22a4cdbc01c2d02cf70641b4002cf487800012f0b4eb94006b740508f282b01607a0076000704670000522e03de85204dd1c7122802042f0170ff1140020442a742a72f072f3940a788882f0c2f024eb9400548ce4fef0018221f204dd1c7114102044a8067000014204072022141000c2f004eb940092116588f52837020b6806600ffa24a856600000c7a20282b015c6000ff901b4602cf700015400074"
+    ],
+    [
+     "stock",
+     "0x40017838",
+     8
+    ],
+    [
+     "hex",
+     "74014ef940022ff4"
+    ],
+    [
+     "stock",
+     "0x40017838",
+     8
+    ],
+    [
+     "stock",
+     "0x4001c2ae",
+     8
+    ],
+    [
+     "hex",
+     "4ef9400224f60000"
+    ]
+   ]
+  }
+ },
+ "symbols": {
+  "TP_RETURN": [
+   "abs",
+   1073882358
+  ],
+  "TP_EPILOGUE": [
+   "abs",
+   1073885172
+  ],
+  "ENQUEUE": [
+   "abs",
+   1074340118
+  ],
+  "TRIG_EVENT": [
+   "abs",
+   1074088142
+  ],
+  "HOLD_CONSUMED": [
+   "abs",
+   1074181952
+  ],
+  "RT_KIT": [
+   "abs",
+   1084721288
+  ],
+  "RT_PATTERN": [
+   "abs",
+   1084721276
+  ],
+  "CUR_TRACK": [
+   "abs",
+   1073816594
+  ],
+  "PROJ_UI": [
+   "abs",
+   1073802128
+  ],
+  "PROJECT": [
+   "abs",
+   1074591846
+  ],
+  "TRIG_HELD": [
+   "abs",
+   1074183678
+  ],
+  "UI_BLOCKED": [
+   "abs",
+   1074182936
+  ],
+  "GRID_MODE": [
+   "abs",
+   1074182520
+  ],
+  "UISTATES": [
+   "abs",
+   1074592168
+  ],
+  "SEQ_RUNNING": [
+   "abs",
+   1074087962
+  ],
+  "IS_REPEAT": [
+   "abs",
+   1074209936
+  ],
+  "IS_PRESS": [
+   "abs",
+   1074209952
+  ],
+  "notus": [
+   ".run",
+   344
+  ],
+  "tp_entry": [
+   ".run",
+   0
+  ]
+ },
+ "exports": [
+  "tp_entry"
+ ],
+ "imports": [],
+ "weak": [],
+ "relocs": [],
+ "sites": [
+  {
+   "addr": "0x400224ee",
+   "len": 8,
+   "stock_sha256": "e164661021f6b5fa55669789b661dc5e6870616ed3c1b92209a1f48e8ad606f2",
+   "new": "4ef9000000004e71",
+   "kind": "code",
+   "relocs": [
+    [
+     2,
+     "abs32",
+     "sym:tp_entry",
+     0
+    ]
+   ]
+  }
+ ],
+ "collections": {},
+ "contribute": [],
+ "copied": [],
+ "resources": {},
+ "requires": [
+  "core"
+ ],
+ "conflicts": [],
+ "build": {
+  "sources": {
+   "trig_preview.s": "e1ed9c8e40f6f74d19f88ab2468e5f69a996305781628acf229feaac4852b117"
+  }
+ },
+ "signature": null
+}

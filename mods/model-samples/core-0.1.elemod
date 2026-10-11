@@ -1,0 +1,317 @@
+{
+ "elemod": 2,
+ "id": "core",
+ "version": "0.1",
+ "title": "core",
+ "description": "The boot copier and the hook bus for Model:Samples: every other mod needs it. On its own it changes nothing the unit does.",
+ "category": "Framework",
+ "author": "drumkilla",
+ "license": "GPL-2.0-or-later",
+ "target": {
+  "device": "model-samples",
+  "product": "Model:Samples",
+  "os": "1.13",
+  "syx_sha256": "e11859b68deb7e5e3fe86ab32581212093849c4be5d3950add011eac398a2ce8",
+  "section3_sha256": "a351392c62ec1c6c3324a807baf46934690d54edfc76029a4b4882541cad1ab2",
+  "section3_len": 1733184
+ },
+ "sections": {
+  ".boot": {
+   "align": 4,
+   "len": 56,
+   "parts": [
+    [
+     "hex",
+     "41f90000000043f900000000203c0000000022d8538066fa43f900000000203c0000000067064299538066fa4eb94000045c4ef9400004b2"
+    ]
+   ]
+  },
+  ".run": {
+   "align": 4,
+   "len": 156,
+   "parts": [
+    [
+     "hex",
+     "2f0a45f900000000201a670c2f2f000820404e90588f60f0245f"
+    ],
+    [
+     "stock",
+     "0x40067a34",
+     10
+    ],
+    [
+     "stock",
+     "0x4000da08",
+     8
+    ],
+    [
+     "hex",
+     "4eb940075c7a508f2f0a45f900000000201a67102f2f00082f2f001020404e90508f60ec"
+    ],
+    [
+     "stock",
+     "0x40025174",
+     8
+    ],
+    [
+     "hex",
+     "000000006126245f4a8066064ef9400063644e752f0a45f900000000610e245f4a8066064ef9400063be4e75201a6712"
+    ],
+    [
+     "stock",
+     "0x40014fea",
+     8
+    ],
+    [
+     "hex",
+     "20404e90508f4a8067ea4e75"
+    ]
+   ]
+  },
+  ".bss": {
+   "align": 4,
+   "size": 16
+  }
+ },
+ "symbols": {
+  "VBR_FN2": [
+   "abs",
+   1073743026
+  ],
+  "VBR_FN": [
+   "abs",
+   1073742940
+  ],
+  "NO_DTIM0": [
+   "abs",
+   1
+  ],
+  "ENCDISP": [
+   "abs",
+   1073767358
+  ],
+  "KEYDISP": [
+   "abs",
+   1073767268
+  ],
+  "DRAWALL": [
+   "abs",
+   1074224250
+  ],
+  "dispatch": [
+   ".run",
+   132
+  ],
+  "core_draw": [
+   ".run",
+   36
+  ],
+  "core_zero": [
+   ".bss",
+   0
+  ],
+  "core_key": [
+   ".run",
+   84
+  ],
+  "boot": [
+   ".boot",
+   0
+  ],
+  "core_tick": [
+   ".run",
+   0
+  ],
+  "core_enc": [
+   ".run",
+   108
+  ]
+ },
+ "exports": [
+  "boot",
+  "core_draw",
+  "core_enc",
+  "core_key",
+  "core_tick",
+  "core_zero"
+ ],
+ "imports": [
+  "__bss_start",
+  "__bss_words",
+  "__run_load",
+  "__run_start",
+  "__run_words",
+  "ev_draw",
+  "ev_enc",
+  "ev_key",
+  "ev_tick"
+ ],
+ "weak": [],
+ "relocs": [
+  [
+   ".boot",
+   2,
+   "abs32",
+   "sym:__run_load",
+   0
+  ],
+  [
+   ".boot",
+   8,
+   "abs32",
+   "sym:__run_start",
+   0
+  ],
+  [
+   ".boot",
+   14,
+   "abs32",
+   "sym:__run_words",
+   0
+  ],
+  [
+   ".boot",
+   26,
+   "abs32",
+   "sym:__bss_start",
+   0
+  ],
+  [
+   ".boot",
+   32,
+   "abs32",
+   "sym:__bss_words",
+   0
+  ],
+  [
+   ".run",
+   4,
+   "abs32",
+   "sym:ev_tick",
+   0
+  ],
+  [
+   ".run",
+   56,
+   "abs32",
+   "sym:ev_draw",
+   0
+  ],
+  [
+   ".run",
+   88,
+   "abs32",
+   "sym:ev_key",
+   0
+  ],
+  [
+   ".run",
+   112,
+   "abs32",
+   "sym:ev_enc",
+   0
+  ]
+ ],
+ "sites": [
+  {
+   "addr": "0x4000052c",
+   "len": 8,
+   "stock_sha256": "5880e46db520311a258ed2b990a1fa89bd4e7a65c18d550c30e88fa9c81ecd11",
+   "new": "4eb9000000004e71",
+   "kind": "code",
+   "relocs": [
+    [
+     2,
+     "abs32",
+     "sym:boot",
+     0
+    ]
+   ]
+  },
+  {
+   "addr": "0x40007e04",
+   "len": 6,
+   "stock_sha256": "05207ef7fb5468a0b94f3b5eeefcacf874b2cef14e921949fe54f891567c3739",
+   "new": "4eb900000000",
+   "kind": "code",
+   "relocs": [
+    [
+     2,
+     "abs32",
+     "sym:core_tick",
+     0
+    ]
+   ]
+  },
+  {
+   "addr": "0x40007e70",
+   "len": 6,
+   "stock_sha256": "9a3845359bf7d158e70ee679c1c5db7e2b4948cb148c5231aec6ea9d718280dd",
+   "new": "4eb900000000",
+   "kind": "code",
+   "relocs": [
+    [
+     2,
+     "abs32",
+     "sym:core_draw",
+     0
+    ]
+   ]
+  },
+  {
+   "addr": "0x4000899a",
+   "len": 6,
+   "stock_sha256": "703d5bc8e4a8f2f56a6ebf55e23adec70a3f533a8fbd52a991520e08b67af4a5",
+   "new": "4eb900000000",
+   "kind": "code",
+   "relocs": [
+    [
+     2,
+     "abs32",
+     "sym:core_key",
+     0
+    ]
+   ]
+  },
+  {
+   "addr": "0x400089ee",
+   "len": 6,
+   "stock_sha256": "be2b9ed6f6ad5edfff32d487f7a441d9da213cb74200cf88b93a01745acacadb",
+   "new": "4eb900000000",
+   "kind": "code",
+   "relocs": [
+    [
+     2,
+     "abs32",
+     "sym:core_enc",
+     0
+    ]
+   ]
+  }
+ ],
+ "collections": {
+  "ev_tick": {
+   "entry": 4
+  },
+  "ev_draw": {
+   "entry": 4
+  },
+  "ev_key": {
+   "entry": 4
+  },
+  "ev_enc": {
+   "entry": 4
+  }
+ },
+ "contribute": [],
+ "copied": [],
+ "resources": {},
+ "requires": [],
+ "conflicts": [],
+ "build": {
+  "sources": {
+   "core.s": "1ee14dbd42a2768b2f32b46bae8767feda8080931d7ea99671093c82df0c6e2c"
+  }
+ },
+ "signature": null
+}

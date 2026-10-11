@@ -26,7 +26,7 @@ from mtlib import aplib, container            # noqa: E402
 from mtlib.syx import unwrap, wrap, BYTES_PER_MSG   # noqa: E402
 
 TWEAKS_DIR = os.path.join(HERE, 'tweaks')
-__version__ = '1.2.0'             # the top entry of CHANGELOG.md (make_manifest.py --check)
+__version__ = '2.1.0'             # the top entry of CHANGELOG.md (make_manifest.py --check)
 
 
 # --------------------------------------------------------------------------- #

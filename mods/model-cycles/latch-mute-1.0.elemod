@@ -1,0 +1,437 @@
+{
+ "elemod": 2,
+ "id": "latch-mute",
+ "version": "1.0",
+ "title": "Latching mute",
+ "description": "Hold [TRACK] and tap [FUNC]: the track mute stays open, with the [FUNC] key lit. Tap [FUNC] alone to leave.",
+ "category": "Performance",
+ "author": "drumkilla",
+ "license": "MIT",
+ "target": {
+  "device": "model-cycles",
+  "product": "Model:Cycles",
+  "os": "1.13",
+  "syx_sha256": "44fe586269631a0ca7da25a3383fc6733c314809505fc3cc52f1e0ed9800640c",
+  "section3_sha256": "cc99d4f0175d34d1e91d046e6ec85a5e8ab58ab9edbb3c24406acd48cb99ee98",
+  "section3_len": 1744192
+ },
+ "sections": {
+  ".run": {
+   "align": 4,
+   "len": 392,
+   "parts": [
+    [
+     "hex",
+     "2f022f0a"
+    ],
+    [
+     "stock",
+     "0x4000937a",
+     8
+    ],
+    [
+     "stock",
+     "0x4001f98e",
+     10
+    ],
+    [
+     "hex",
+     "7201b08167384a3900000000"
+    ],
+    [
+     "stock",
+     "0x4001a1da",
+     8
+    ],
+    [
+     "hex",
+     "24a0588f4a006718"
+    ],
+    [
+     "stock",
+     "0x40008766",
+     12
+    ],
+    [
+     "hex",
+     "4a806708700113c000000000245f241f"
+    ],
+    [
+     "stock",
+     "0x4001a1fc",
+     12
+    ],
+    [
+     "hex",
+     "24a0588f4a006712423900000000203940a78e2823c00000"
+    ],
+    [
+     "stock",
+     "0x40079f1a",
+     8
+    ],
+    [
+     "hex",
+     "2470588f4a006716611c4a80"
+    ],
+    [
+     "stock",
+     "0x4006cbbc",
+     14
+    ],
+    [
+     "hex",
+     "420060027001245f241f4e754a3900000000671c4a39000000006624203940a78e2890b9000000000c80000004006410"
+    ],
+    [
+     "stock",
+     "0x4001a74e",
+     14
+    ],
+    [
+     "hex",
+     "670a700113c0000000004e7542390000000070004e75"
+    ],
+    [
+     "stock",
+     "0x400069be",
+     12
+    ],
+    [
+     "hex",
+     "bb18588f4a00664e"
+    ],
+    [
+     "stock",
+     "0x40008766",
+     12
+    ],
+    [
+     "hex",
+     "4a806630"
+    ],
+    [
+     "stock",
+     "0x4001a74e",
+     14
+    ],
+    [
+     "hex",
+     "662e"
+    ],
+    [
+     "stock",
+     "0x4001cbac",
+     14
+    ],
+    [
+     "hex",
+     "661e"
+    ],
+    [
+     "stock",
+     "0x4001d47e",
+     10
+    ],
+    [
+     "hex",
+     "588f4a80"
+    ],
+    [
+     "stock",
+     "0x4001d526",
+     8
+    ],
+    [
+     "hex",
+     "40ca4ef9400235224ef94002357e"
+    ],
+    [
+     "stock",
+     "0x400208a6",
+     12
+    ],
+    [
+     "hex",
+     "00184eb9400c"
+    ],
+    [
+     "stock",
+     "0x4001aaac",
+     8
+    ],
+    [
+     "hex",
+     "5f864fef0010201200800100000024804eb9400cfaf44ef9400233a60000"
+    ]
+   ]
+  },
+  ".bss": {
+   "align": 4,
+   "size": 6
+  }
+ },
+ "symbols": {
+  "FL_RETURN": [
+   "abs",
+   1073886118
+  ],
+  "SET_LED": [
+   "abs",
+   1073766278
+  ],
+  "LEDMGR": [
+   "abs",
+   1074592500
+  ],
+  "LEDCOLOR": [
+   "abs",
+   1078627512
+  ],
+  "NOTES_DECLINE": [
+   "abs",
+   1073886590
+  ],
+  "NOTES_RET": [
+   "abs",
+   1073886498
+  ],
+  "PAD_INDEX": [
+   "abs",
+   1074217162
+  ],
+  "UI_BLOCKED": [
+   "abs",
+   1074182936
+  ],
+  "UISTATES": [
+   "abs",
+   1074592168
+  ],
+  "PARENT_KEYS": [
+   "abs",
+   1074224956
+  ],
+  "BLOCKS": [
+   "abs",
+   1084722728
+  ],
+  "IS_HELD": [
+   "abs",
+   1074264820
+  ],
+  "IS_RELEASE": [
+   "abs",
+   1074209904
+  ],
+  "IS_PRESS": [
+   "abs",
+   1074209952
+  ],
+  "GET_CODE": [
+   "abs",
+   1074209804
+  ],
+  "funckey": [
+   ".run",
+   84
+  ],
+  "lm_latched": [
+   ".bss",
+   5
+  ],
+  "parent": [
+   ".run",
+   74
+  ],
+  "lm_flag": [
+   ".bss",
+   4
+  ],
+  "lm_heldat": [
+   ".bss",
+   0
+  ],
+  "stay": [
+   ".run",
+   152
+  ],
+  "latch": [
+   ".run",
+   160
+  ],
+  "out": [
+   ".run",
+   154
+  ],
+  "track": [
+   ".run",
+   196
+  ],
+  "yes": [
+   ".run",
+   212
+  ],
+  "no": [
+   ".run",
+   222
+  ],
+  "decline": [
+   ".run",
+   330
+  ],
+  "normal": [
+   ".run",
+   316
+  ],
+  "lm_notes": [
+   ".run",
+   232
+  ],
+  "lm_led": [
+   ".run",
+   336
+  ],
+  "lm_keys": [
+   ".run",
+   0
+  ]
+ },
+ "exports": [
+  "lm_keys",
+  "lm_led",
+  "lm_notes"
+ ],
+ "imports": [],
+ "weak": [],
+ "relocs": [
+  [
+   ".run",
+   30,
+   "abs32",
+   "sec:.bss",
+   5
+  ],
+  [
+   ".run",
+   70,
+   "abs32",
+   "sec:.bss",
+   4
+  ],
+  [
+   ".run",
+   100,
+   "abs32",
+   "sec:.bss",
+   4
+  ],
+  [
+   ".run",
+   112,
+   "abs32",
+   "sec:.bss",
+   0
+  ],
+  [
+   ".run",
+   162,
+   "abs32",
+   "sec:.bss",
+   5
+  ],
+  [
+   ".run",
+   170,
+   "abs32",
+   "sec:.bss",
+   4
+  ],
+  [
+   ".run",
+   184,
+   "abs32",
+   "sec:.bss",
+   0
+  ],
+  [
+   ".run",
+   216,
+   "abs32",
+   "sec:.bss",
+   5
+  ],
+  [
+   ".run",
+   224,
+   "abs32",
+   "sec:.bss",
+   5
+  ]
+ ],
+ "sites": [
+  {
+   "addr": "0x40100c44",
+   "len": 4,
+   "stock_sha256": "983ff5bc9dcfc5398c29a480165c4442b7e3d67953e4c507953387c3b84c859c",
+   "new": "00000000",
+   "kind": "data",
+   "relocs": [
+    [
+     0,
+     "abs32",
+     "sym:lm_keys",
+     0
+    ]
+   ]
+  },
+  {
+   "addr": "0x4002351a",
+   "len": 8,
+   "stock_sha256": "4acd7c9697a37a9cff865c775a2c084a98eb2638bb2f864c9a776fa1d93f8ef1",
+   "new": "4ef9000000004e71",
+   "kind": "code",
+   "relocs": [
+    [
+     2,
+     "abs32",
+     "sym:lm_notes",
+     0
+    ]
+   ]
+  },
+  {
+   "addr": "0x400233a0",
+   "len": 6,
+   "stock_sha256": "a8daba117e6cfe9d4daf86594645b03e2dca0360ba0399d9d8c9401324082da2",
+   "new": "4ef900000000",
+   "kind": "code",
+   "relocs": [
+    [
+     2,
+     "abs32",
+     "sym:lm_led",
+     0
+    ]
+   ]
+  }
+ ],
+ "collections": {},
+ "contribute": [],
+ "copied": [],
+ "resources": {
+  "names": [
+   "ui:FUNC+TRACK latch"
+  ]
+ },
+ "requires": [
+  "core"
+ ],
+ "conflicts": [],
+ "build": {
+  "sources": {
+   "latch_mute.s": "843ff34b49e60506d086268fe3b46cfebfc48f67955160dad54b47e1b1bbce97"
+  }
+ },
+ "signature": null
+}

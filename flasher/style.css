@@ -74,8 +74,11 @@ p { margin: 0 0 10px; }
   cursor: pointer; transition: border-color .2s, background-color .2s;
 }
 .tweak:hover { border-color: var(--ink-faint); }
+.tweak:focus-visible { outline: 1px solid var(--accent); outline-offset: 2px; }
+.tweak.selected { box-shadow: inset 3px 0 0 var(--accent); }
 .tweak:has(input:checked) { border-color: var(--accent); background: var(--accent-faint); }
 .tweak-name { font-family: var(--display); font-weight: 500; font-size: 16px; line-height: 18px; color: var(--ink); }
+.tweak-version { font-family: var(--mono); font-weight: 400; font-size: 11px; letter-spacing: 0.04em; color: var(--ink-dim); margin-left: 0.2em; }
 .tweak ul { margin: 8px 0 0; padding: 0; color: var(--ink-dim); font-size: 12.5px; line-height: 1.6; }
 .tweak li { list-style: none; margin: 1px 0; }
 .tweak li.term { display: grid; grid-template-columns: 3.4em 1fr; column-gap: 8px; padding-left: 2px; align-items: baseline; }
@@ -158,3 +161,30 @@ progress::-moz-progress-bar { background: var(--accent); }
 .changelog li::marker { color: var(--accent); }
 .changelog p { color: var(--ink-dim); margin: 10px 0 4px; }
 .changelog strong { color: var(--ink); font-weight: 500; }
+
+/* the mods and a mod's details beside them (under its card on a narrow screen) */
+#step-pick { width: min(1180px, calc(100vw - 32px)); position: relative; left: 50%; transform: translateX(-50%); }
+.pick { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); gap: 18px; align-items: start; }
+#details-col { position: sticky; top: 16px; }
+.details {
+  border: 1px solid var(--rule); background: var(--bg); padding: 18px 20px;
+  max-height: calc(100vh - 32px); overflow: auto; color: var(--ink-dim); font-size: 13px; line-height: 1.6;
+}
+.details h3, .details h4, .details h5 { font-family: var(--display); color: var(--ink); font-weight: 500; margin: 18px 0 6px; }
+.details h3 { font-size: 18px; margin-top: 0; }
+.details h4 { font-size: 15px; }
+.details h5 { font-size: 13px; letter-spacing: 0.04em; }
+.details p { margin: 6px 0; }
+.details ul { margin: 6px 0; padding-left: 18px; }
+.details li { margin: 3px 0; }
+.details strong { color: var(--ink); font-weight: 500; }
+.details figure { margin: 14px 0; }
+.details img { display: block; width: 100%; max-width: 384px; image-rendering: pixelated; border: 1px solid var(--rule); }
+.details figcaption { font-size: 11.5px; color: var(--ink-faint); margin-top: 6px; }
+@media (max-width: 900px) {
+  #step-pick { width: auto; left: auto; transform: none; }
+  .pick { display: block; }
+  #details-col { position: static; }
+  .tweak + .details { border-top: 0; margin-top: -10px; max-height: none; }
+  #details-col .details { display: none; }
+}

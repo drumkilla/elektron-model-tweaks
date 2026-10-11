@@ -1,0 +1,54 @@
+elekloader
+Copyright (C) 2026 irpina and contributors
+
+elekloader is free software: you can redistribute it and/or modify it under
+the terms of the GNU General Public License as published by the Free
+Software Foundation, either version 2 of the License, or (at your option)
+any later version. See LICENSE for version 2.
+
+elekloader is distributed in the hope that it will be useful, but WITHOUT
+ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for
+more details.
+
+Code from other projects
+------------------------
+These files come from digikit (https://github.com/m-dwyer/digikit),
+under the GNU GPL version 2 or (at your option) any later version. Each file names its origin in its header.
+
+  elekloader/codec/elz.py        dt2/elz.py, by Em D
+  elekloader/codec/aplib.py      dt2/aplib.py, by Em D; the match-finder and
+                                 compressed output by irpina
+  elekloader/codec/transport.py  the transport encoders and checksums from
+                                 dt2/build.py, by Em D; changes by irpina
+  elekloader/isa/coldfire.py     emu/cfisa.py, by irpina
+
+Firmware formats
+----------------
+The ELE3 container, the SysEx transport and the packing format were first
+documented by elektron-firmware-tool
+(https://github.com/mischa85/elektron-firmware-tool, MIT, (c) 2026 Marcel
+Bierling). No code from that tool is included; it served as a
+cross-check.
+
+octabam
+-------
+Facts about the Octatrack come from sambanks/octabam
+(https://github.com/sambanks/octabam, MIT, (c) 2026 Sam Banks), and are
+marked "octabam" where they are used (elekloader/devices/octatrack.py).
+mods/core-ot makes the same 28 arena writes as octabam's platform, for the
+same reservation. elekloader/sdk/octabam.py reads octabam's module manifests
+from a checkout the user supplies, and copies their sources into the mod
+folders it writes, with octabam's licence beside them. No octabam code is
+included here.
+
+Elektron
+--------
+Elektron, Digitakt, Digitone, Syntakt and Analog are trademarks of Elektron
+Music Machines. elekloader is not affiliated with or endorsed by Elektron.
+It contains no Elektron firmware and distributes nothing derived from it:
+every build happens on the user's machine, from the stock OS file the user
+supplies. Mods carry only their authors' own bytes, plus short instruction
+fragments needed to hook the OS (runs of stock bytes under 8 bytes long, and
+the instructions a hook displaces, are stored as they are), and hashes of
+the stock bytes they expect.

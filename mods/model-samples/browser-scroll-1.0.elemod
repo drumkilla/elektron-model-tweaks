@@ -1,0 +1,148 @@
+{
+ "elemod": 2,
+ "id": "browser-scroll",
+ "version": "1.0",
+ "title": "Browser name scroll",
+ "description": "A name too long for the browser scrolls left, about 170 ms a character, pausing at each end.",
+ "category": "Interface",
+ "author": "drumkilla",
+ "license": "MIT",
+ "target": {
+  "device": "model-samples",
+  "product": "Model:Samples",
+  "os": "1.13",
+  "syx_sha256": "e11859b68deb7e5e3fe86ab32581212093849c4be5d3950add011eac398a2ce8",
+  "section3_sha256": "a351392c62ec1c6c3324a807baf46934690d54edfc76029a4b4882541cad1ab2",
+  "section3_len": 1733184
+ },
+ "sections": {
+  ".run": {
+   "align": 4,
+   "len": 180,
+   "parts": [
+    [
+     "stock",
+     "0x40002144",
+     8
+    ],
+    [
+     "hex",
+     "242f0028262f002445f900000000204278007200700010186706d280528460f620044840d081b092670c248042aa000442aa000c6060"
+    ],
+    [
+     "stock",
+     "0x40006c38",
+     12
+    ],
+    [
+     "hex",
+     "8bc8588f203940968738220092aa0008e089674025400008200490836c027000222a0004b280640c4a81670c528125410004602072ff60027200202a000c52802540000c7603b083650a42aa000c528125410004202a0004d1af0028"
+    ],
+    [
+     "stock",
+     "0x4000be1e",
+     8
+    ],
+    [
+     "hex",
+     "4ef9400709fc"
+    ]
+   ]
+  },
+  ".bss": {
+   "align": 4,
+   "size": 16
+  }
+ },
+ "symbols": {
+  "DRAWTEXT": [
+   "abs",
+   1074203132
+  ],
+  "BLOCKS": [
+   "abs",
+   1083606840
+  ],
+  "MARK_DIRTY": [
+   "abs",
+   1074170824
+  ],
+  "UISTATES": [
+   "abs",
+   1074574966
+  ],
+  "bs_state": [
+   ".bss",
+   0
+  ],
+  "same": [
+   ".run",
+   62
+  ],
+  "draw": [
+   ".run",
+   158
+  ],
+  "atend": [
+   ".run",
+   126
+  ],
+  "atstart": [
+   ".run",
+   130
+  ],
+  "dwell": [
+   ".run",
+   132
+  ],
+  "bs_draw": [
+   ".run",
+   0
+  ]
+ },
+ "exports": [
+  "bs_draw"
+ ],
+ "imports": [],
+ "weak": [],
+ "relocs": [
+  [
+   ".run",
+   18,
+   "abs32",
+   "sec:.bss",
+   0
+  ]
+ ],
+ "sites": [
+  {
+   "addr": "0x400a3e8c",
+   "len": 6,
+   "stock_sha256": "24ab1bb0ccb43362074c9177e6fd30499783ad9a6e81fdebd88b18d2ea05c79d",
+   "new": "4eb900000000",
+   "kind": "code",
+   "relocs": [
+    [
+     2,
+     "abs32",
+     "sym:bs_draw",
+     0
+    ]
+   ]
+  }
+ ],
+ "collections": {},
+ "contribute": [],
+ "copied": [],
+ "resources": {},
+ "requires": [
+  "core"
+ ],
+ "conflicts": [],
+ "build": {
+  "sources": {
+   "browser_scroll.s": "d83cefe2f1b959295f5b65ae6ae6b7d858887078b19d7926d4985c478a1d3a87"
+  }
+ },
+ "signature": null
+}

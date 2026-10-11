@@ -1,0 +1,24 @@
+{
+ "id": "core", "version": "0.1",
+ "license": "GPL-2.0-or-later",
+ "title": "core", "category": "Framework", "author": "drumkilla",
+ "description": "The boot copier and the hook bus for Model:Cycles: every other mod needs it. On its own it changes nothing the unit does.",
+ "device": "model-cycles", "os": "1.13",
+ "sources": ["../core/core.s"],
+ "defsym": {
+  "DRAWALL": "0x40076c1a",
+  "KEYDISP": "0x400060fe",
+  "ENCDISP": "0x40006158",
+  "NO_DTIM0": "1",
+  "VBR_FN": "0x4000045c",
+  "VBR_FN2": "0x400004b2"
+ },
+ "sites": [
+  {"addr": "0x4000052c", "stock": "4ebaff2e4ebaff80", "op": "jsr", "target": "boot"},
+  {"addr": "0x400075f0", "stock": "4eb940076be4", "op": "jsr", "target": "core_tick"},
+  {"addr": "0x4000765c", "stock": "4eb940076c1a", "op": "jsr", "target": "core_draw"},
+  {"addr": "0x4000817a", "stock": "4eb9400060fe", "op": "jsr", "target": "core_key"},
+  {"addr": "0x400081ce", "stock": "4eb940006158", "op": "jsr", "target": "core_enc"}
+ ],
+ "collections": {"ev_tick": 4, "ev_draw": 4, "ev_key": 4, "ev_enc": 4}
+}

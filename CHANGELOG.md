@@ -4,6 +4,40 @@ Versions follow [semantic versioning](https://semver.org): a new tweak or a new
 behaviour raises the minor number, a fix that changes nothing you rely on raises
 the patch number. The web flasher shows this file.
 
+## 2.1.0 — 2026-10-11
+
+New mod for **Model:Samples**:
+
+- **Sample edit**: SMPL START and SMPL LENGTH show the sample's waveform while you
+  turn them, with a zoom (hold PAGE, or turn LEVEL/DATA); the knob's steps get
+  finer as you zoom in, down to 1/256 of a value. Track Setup > Zero puts the
+  notes' start and end on zero crossings.
+
+## 2.0.0 — 2026-10-10
+
+The firmware is now linked from `.elemod` mods (in `mods/`) by elekloader's
+linker, run in the page; a mod's requirements are added by themselves.
+
+New mods for **Model:Samples**:
+
+- **Attack** parameter via **FUNC + DECAY**. P-locks and LFO are supported too.
+- **Stereo samples**: upload stereo WAVs with Transfer (CONFIG > Device >
+  Upload = ST) and play them in stereo; Track Setup (FUNC + TRACK) > Chan - 
+  sets the track playback mode - mono or stereo. If set to mono, then stereo samples are played in mono (and use less CPU).
+- **Stretch** - Akai-style real-time time-stretch: FUNC + TRACK > Strch. BPM
+  mode fits the sample to the tempo and follows tempo and pitch changes. All its
+  settings can be p-locked per step (trigless trigs included), e.g. a sample
+  lock that plays a 1-bar loop on a track set to Len 64.
+- **Modkit** foundation library to make development easier: lets mods add menu
+  items and pages, keep their settings in the project and the device, and
+  p-lock them on steps. Adds CONFIG > Device > Last Page option: FUNC + TRACK
+  reopens where you left it.
+
+**Model:Cycles**:
+
+- **Fast-audio** (the render's hot code in on-chip SRAM). Based on **18nelli**'s
+  research and [irpina/digihealth](https://github.com/irpina/digihealth).
+
 ## 1.2.0 — 2026-10-05
 
 - **usb16**: A16 now takes about half the CPU it did. With 16 channels

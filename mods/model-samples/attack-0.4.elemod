@@ -1,0 +1,491 @@
+{
+ "elemod": 2,
+ "id": "attack",
+ "version": "0.4",
+ "title": "Amp Attack",
+ "description": "[FUNC] + DECAY: Amp Attack, 0 (instant, as stock) to 127 (1 s). Parameter is p-lockable, and can be used as an LFO destination",
+ "category": "Sound",
+ "author": "drumkilla",
+ "license": "MIT",
+ "target": {
+  "device": "model-samples",
+  "product": "Model:Samples",
+  "os": "1.13",
+  "syx_sha256": "e11859b68deb7e5e3fe86ab32581212093849c4be5d3950add011eac398a2ce8",
+  "section3_sha256": "a351392c62ec1c6c3324a807baf46934690d54edfc76029a4b4882541cad1ab2",
+  "section3_len": 1733184
+ },
+ "sections": {
+  ".run": {
+   "align": 4,
+   "len": 524,
+   "parts": [
+    [
+     "hex",
+     "7003b0af0008660a4aaf000c670470044e754ef94001fdfa7004b08366027c0042001d40ffdc4e7570004a6c00286f0270072f01732c003eb2806f022001221f4e754a3900000000661c700113c0"
+    ],
+    [
+     "stock",
+     "0x4005194a",
+     8
+    ],
+    [
+     "hex",
+     "252043f940961cec701822d853806afa4e7561266720"
+    ],
+    [
+     "stock",
+     "0x40059996",
+     8
+    ],
+    [
+     "hex",
+     "4ef94005999e6114670e"
+    ],
+    [
+     "stock",
+     "0x40059996",
+     8
+    ],
+    [
+     "hex",
+     "4ef9400599d870184e757018b0af000c660a7206b2af00086304b0804e754a81"
+    ],
+    [
+     "stock",
+     "0x400f6912",
+     8
+    ],
+    [
+     "stock",
+     "0x400f6c16",
+     12
+    ],
+    [
+     "stock",
+     "0x400f75e6",
+     50
+    ],
+    [
+     "stock",
+     "0x401056d8",
+     38
+    ],
+    [
+     "stock",
+     "0x400f6c0a",
+     8
+    ],
+    [
+     "stock",
+     "0x400f75e6",
+     18
+    ],
+    [
+     "stock",
+     "0x40016bd8",
+     8
+    ],
+    [
+     "hex",
+     "2f2f000c61064fef000c604c"
+    ],
+    [
+     "stock",
+     "0x400062c4",
+     8
+    ],
+    [
+     "hex",
+     "4ef94005a00e"
+    ],
+    [
+     "stock",
+     "0x40016bd8",
+     8
+    ],
+    [
+     "hex",
+     "2f2f000c61064fef000c602a"
+    ],
+    [
+     "stock",
+     "0x400062c4",
+     8
+    ],
+    [
+     "hex",
+     "4ef94005a13c"
+    ],
+    [
+     "stock",
+     "0x4000da08",
+     8
+    ],
+    [
+     "hex",
+     "6104508f603e"
+    ],
+    [
+     "stock",
+     "0x400054a2",
+     8
+    ],
+    [
+     "hex",
+     "4ef940059e7c4a00672a"
+    ],
+    [
+     "stock",
+     "0x4000eb50",
+     8
+    ],
+    [
+     "hex",
+     "31690044004c223c00001800b269001c6604314100247218b2a9005866041141005e4e754a006738"
+    ],
+    [
+     "stock",
+     "0x4000eb50",
+     8
+    ],
+    [
+     "hex",
+     "7369004c6b080c8100007f006f02720031410044223c00001800b269002466043141001c7218b229005e6604214100584e75416d702041747461636b0041544b00000000"
+    ]
+   ]
+  },
+  ".bss": {
+   "align": 4,
+   "size": 1
+  }
+ },
+ "symbols": {
+  "KNOB_STOCK": [
+   "abs",
+   1073872378
+  ],
+  "ROW": [
+   "abs",
+   4
+  ],
+  "RT_SRC": [
+   "abs",
+   1083581728
+  ],
+  "RT_DST": [
+   "abs",
+   1083579628
+  ],
+  "RT_LEN": [
+   "abs",
+   100
+  ],
+  "atk_done": [
+   ".bss",
+   0
+  ],
+  "atk_is24": [
+   ".run",
+   144
+  ],
+  "atk_save_post": [
+   ".run",
+   396
+  ],
+  "atk_load_post": [
+   ".run",
+   444
+  ],
+  "atk_id2pid": [
+   ".run",
+   104
+  ],
+  "atk_idx": [
+   ".run",
+   40
+  ],
+  "atk_long": [
+   ".run",
+   506
+  ],
+  "atk_load2": [
+   ".run",
+   368
+  ],
+  "atk_fine": [
+   ".run",
+   24
+  ],
+  "atk_short": [
+   ".run",
+   517
+  ],
+  "atk_save1": [
+   ".run",
+   334
+  ],
+  "atk_smap": [
+   ".run",
+   168
+  ],
+  "atk_knob": [
+   ".run",
+   0
+  ],
+  "atk_save2": [
+   ".run",
+   300
+  ],
+  "atk_tick": [
+   ".run",
+   66
+  ],
+  "atk_pid2id": [
+   ".run",
+   122
+  ]
+ },
+ "exports": [
+  "atk_fine",
+  "atk_id2pid",
+  "atk_idx",
+  "atk_knob",
+  "atk_load2",
+  "atk_long",
+  "atk_pid2id",
+  "atk_save1",
+  "atk_save2",
+  "atk_short",
+  "atk_smap",
+  "atk_tick"
+ ],
+ "imports": [],
+ "weak": [],
+ "relocs": [
+  [
+   ".run",
+   68,
+   "abs32",
+   "sec:.bss",
+   0
+  ],
+  [
+   ".run",
+   78,
+   "abs32",
+   "sec:.bss",
+   0
+  ]
+ ],
+ "sites": [
+  {
+   "addr": "0x40109128",
+   "len": 56,
+   "stock_sha256": "20dab87d699e69910ae11d9270c69ce56254d3b1a5254762fa0551d24f78a75e",
+   "new": "00000001000000180000000000007f000000000000000000ffffffffffffffff0000004e000006000000001f000000004012a56d00000000",
+   "kind": "data",
+   "relocs": [
+    [
+     44,
+     "abs32",
+     "sym:atk_long",
+     0
+    ],
+    [
+     52,
+     "abs32",
+     "sym:atk_short",
+     0
+    ]
+   ]
+  },
+  {
+   "addr": "0x40108fa4",
+   "len": 4,
+   "stock_sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
+   "new": "00000004",
+   "kind": "data",
+   "relocs": []
+  },
+  {
+   "addr": "0x400fbf08",
+   "len": 4,
+   "stock_sha256": "684f41f9cd0926a645531a6764116cb53dd890cc7b5b7ce5056ac474a8d8243f",
+   "new": "00000000",
+   "kind": "data",
+   "relocs": [
+    [
+     0,
+     "abs32",
+     "sym:atk_knob",
+     0
+    ]
+   ]
+  },
+  {
+   "addr": "0x400587c8",
+   "len": 12,
+   "stock_sha256": "3cdf4d5178af4d6fd6600cdee46286489e2092d2cd36e57bd45bd94094d6576d",
+   "new": "4eb9000000004e714e714e71",
+   "kind": "code",
+   "relocs": [
+    [
+     2,
+     "abs32",
+     "sym:atk_idx",
+     0
+    ]
+   ]
+  },
+  {
+   "addr": "0x40059996",
+   "len": 8,
+   "stock_sha256": "7cf63c9bfbefdffb5beb077b9d6e80243f5a0bc6f610792b4391127bf1c7933e",
+   "new": "4ef9000000004e71",
+   "kind": "code",
+   "relocs": [
+    [
+     2,
+     "abs32",
+     "sym:atk_id2pid",
+     0
+    ]
+   ]
+  },
+  {
+   "addr": "0x400599d0",
+   "len": 8,
+   "stock_sha256": "7cf63c9bfbefdffb5beb077b9d6e80243f5a0bc6f610792b4391127bf1c7933e",
+   "new": "4ef9000000004e71",
+   "kind": "code",
+   "relocs": [
+    [
+     2,
+     "abs32",
+     "sym:atk_pid2id",
+     0
+    ]
+   ]
+  },
+  {
+   "addr": "0x4005a9b6",
+   "len": 6,
+   "stock_sha256": "17a444bd971c42975622b7b343d9a69e68a4177a0a6fd429fb8fced90b6ed017",
+   "new": "4bf900000000",
+   "kind": "code",
+   "relocs": [
+    [
+     2,
+     "abs32",
+     "sym:atk_smap",
+     0
+    ]
+   ]
+  },
+  {
+   "addr": "0x4005aae8",
+   "len": 6,
+   "stock_sha256": "8d25fc5160fa855a512de48d134c97abc68b0f3fff3e5228c8a3d96ec4377490",
+   "new": "43f900000000",
+   "kind": "code",
+   "relocs": [
+    [
+     2,
+     "abs32",
+     "sym:atk_smap",
+     0
+    ]
+   ]
+  },
+  {
+   "addr": "0x4005a006",
+   "len": 8,
+   "stock_sha256": "b68bc7d23c230258939a138565f6ce0857c8519234b2e5f45b2120f58d4b44db",
+   "new": "4ef9000000004e71",
+   "kind": "code",
+   "relocs": [
+    [
+     2,
+     "abs32",
+     "sym:atk_save2",
+     0
+    ]
+   ]
+  },
+  {
+   "addr": "0x4005a134",
+   "len": 8,
+   "stock_sha256": "b68bc7d23c230258939a138565f6ce0857c8519234b2e5f45b2120f58d4b44db",
+   "new": "4ef9000000004e71",
+   "kind": "code",
+   "relocs": [
+    [
+     2,
+     "abs32",
+     "sym:atk_save1",
+     0
+    ]
+   ]
+  },
+  {
+   "addr": "0x40059e74",
+   "len": 8,
+   "stock_sha256": "aafc8f979f6aeb11a4358bcf7b01706892acebe4c40d3e520f88528b3cac80a8",
+   "new": "4ef9000000004e71",
+   "kind": "code",
+   "relocs": [
+    [
+     2,
+     "abs32",
+     "sym:atk_load2",
+     0
+    ]
+   ]
+  },
+  {
+   "addr": "0x40020d9e",
+   "len": 6,
+   "stock_sha256": "d8edd2d6516eaab9d6bc3a6095cca050e86e8fbc4e8d70a8c89ffae146975c15",
+   "new": "4eb900000000",
+   "kind": "code",
+   "relocs": [
+    [
+     2,
+     "abs32",
+     "sym:atk_fine",
+     0
+    ]
+   ]
+  }
+ ],
+ "collections": {},
+ "contribute": [
+  {
+   "to": "ev_tick",
+   "order": 10,
+   "data": "00000000",
+   "relocs": [
+    [
+     0,
+     "abs32",
+     "sym:atk_tick",
+     0
+    ]
+   ],
+   "claims": []
+  }
+ ],
+ "copied": [],
+ "resources": {},
+ "requires": [
+  "core"
+ ],
+ "conflicts": [],
+ "build": {
+  "sources": {
+   "attack.s": "f970fbed29b693297fff4b6cbc1ba5128a6db491e62e630211c3c69eb522582f"
+  }
+ },
+ "signature": null
+}

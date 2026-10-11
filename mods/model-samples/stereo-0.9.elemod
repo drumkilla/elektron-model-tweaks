@@ -1,0 +1,1739 @@
+{
+ "elemod": 2,
+ "id": "stereo",
+ "version": "0.9",
+ "title": "Stereo samples",
+ "description": "Stereo WAVs upload through Transfer as stereo and play in stereo. Stereo upload is an option and can be switched to stock state in Config -> Device -> Upload setting. In Track setup menu ([FUNC] + [TRACK]) added option Chan, that sets track playback mode as MONO or STEREO (ST)",
+ "category": "Sound",
+ "author": "drumkilla",
+ "license": "MIT",
+ "target": {
+  "device": "model-samples",
+  "product": "Model:Samples",
+  "os": "1.13",
+  "syx_sha256": "e11859b68deb7e5e3fe86ab32581212093849c4be5d3950add011eac398a2ce8",
+  "section3_sha256": "a351392c62ec1c6c3324a807baf46934690d54edfc76029a4b4882541cad1ab2",
+  "section3_len": 1733184
+ },
+ "sections": {
+  ".run": {
+   "align": 4,
+   "len": 3188,
+   "parts": [
+    [
+     "stock",
+     "0x4010da48",
+     34
+    ],
+    [
+     "hex",
+     "5d09206f00047000102800082268000c2228001092895b815a890c8000000009674a0c800000007a66407006b2806d347203e188101953816af823c00000000070001019e18810190c80000008006306203c0000080023c000000000707a23c0000000007002114000084e752f0a52b90000000045f90000000024c1702bb2806e04200153804a806b0a2f0914d953806afa225f45fa01844a81670e1019b01a66204a006708538160ee4a12661443fa01914ab900000000660443fa01877002600643fa0181700123c90000000023c000000000700923c000000000245f7002114000084e757000102a00084fef00204ab90000000067280c800000008266202039000000002f40003026390000000020390000000042b90000000008c000074ef940093e26206f00081028ffc10c000001660000e0b1fc4a1dd4c0663c202f000c0c800001ffc06306203c0001ffc0e4882200d2812f41000c22482f024a806712321948c1341948c2d282e28130c1538066ee241f6000009c"
+    ],
+    [
+     "stock",
+     "0x40002144",
+     8
+    ],
+    [
+     "hex",
+     "242f001ce48a2002d0802f40001c224824482208d2af001cd2af001c0681000000130281fffffffc2041d2800c814e2dd4e0630291c82f084a826722361948c3381948c42003d084e28034c0b1fc0000000067069684e28330c3538266de205f7003b1fc000000006718429a429a429a429a242f001ce28a670634d8538266fa7002206f00181140ffc1"
+    ],
+    [
+     "stock",
+     "0x4000be1e",
+     8
+    ],
+    [
+     "hex",
+     "4ef9400a637e73616d706c655f66696c652e696e7465726c65617665645f73746572656f5f737570706f727400010101"
+    ],
+    [
+     "stock",
+     "0x400020b6",
+     8
+    ],
+    [
+     "hex",
+     "03062400c0fc005c207c8000cbe4d1c022100c814a2dd49065540c814e2dd4e0644c22410c8200000006640a20024eb9000000006638202800140c820000000664182239000000000501670ee18ad48241f900000000203028041229ffc10c010002660ad080068000000010600270004cd70306"
+    ],
+    [
+     "stock",
+     "0x40006176",
+     8
+    ],
+    [
+     "hex",
+     "ffe848d7060f26006100ff744a8067622410c6fc005c227c8000cbe422313800b4816506d280b481650270002242d3c0b3fc4a2dd490650eb3fc4e2dd4e0640693fc080000002228001004818000100845f900000000d5c17000302800140280000001ff670c24d924d924d924d9538066f44cd7060f4fef00184e754aaf000c6704610000884aaf0010660c"
+    ],
+    [
+     "stock",
+     "0x400952be",
+     8
+    ],
+    [
+     "hex",
+     "6100ff6870004e754feffff848d71800264997fc80001008d7fc00000000284a99fc80001008d9fc0000000053806b0634d938db60f64cd718004fef00084e752f00202f0008610000184cd700014fef00046600ffb453806b0434d960f84e752f017207e1a9e289c2b9000000004cd700024fef0004"
+    ],
+    [
+     "stock",
+     "0x40001eb4",
+     8
+    ],
+    [
+     "hex",
+     "00077200740720026100fe624a80670205c153826af023c1000000004cd700074fef000c4e756100ffd2d1c1224845f98000100842a76100ff8a588f2049224a4ef9400a6b0c43f98000100824412f2f00606100ff6e588f6000001a45f9800010082f2f00606100ff5a588f204a4ef9400a712023c800000000202f00600c8000000006640000d023c0000000006100fddc4a806616203900000000720001c14681c3b900000000600000ac20390000000022390000000001c123c1000000002239000000000101660e01c123c100000000610000ea600e22398000102801016704610000ba202b000423c000000000202b001023c000000000202b001c23c000000000202b002023c0000000006100005a20790000000091fc80001008d1fc000000004ef9000000006100003e20390000000027400004203900000000274000102039000000002740001c20390000000027400020207900000000"
+    ],
+    [
+     "stock",
+     "0x400a700a",
+     8
+    ],
+    [
+     "hex",
+     "4ef9400a70124feffff848d70300203900000000c0fc003043f900000000d3c041eb002c700b221020d122c153806af64cd703004fef00084e752f08203900000000c0fc003041f900000000d1c0700b429853806afa205f4e754feffff848d70101203900000000c0fc003041f900000000d1c0700b429853806afa203900000000e78841f900000000"
+    ],
+    [
+     "stock",
+     "0x400582f4",
+     8
+    ],
+    [
+     "hex",
+     "42b0083042b008344cd701014fef00084e754ab9000000006760"
+    ],
+    [
+     "stock",
+     "0x40001098",
+     8
+    ],
+    [
+     "hex",
+     "206f001443f900000000701722d853806afa203c0000000023c0"
+    ],
+    [
+     "stock",
+     "0x4005194a",
+     8
+    ],
+    [
+     "hex",
+     "823843f900000000701122d853806afa487900000000611e588f41f9"
+    ],
+    [
+     "stock",
+     "0x4005190e",
+     8
+    ],
+    [
+     "hex",
+     "8238701122d853806afa"
+    ],
+    [
+     "stock",
+     "0x400010f6",
+     8
+    ],
+    [
+     "stock",
+     "0x40042924",
+     8
+    ],
+    [
+     "hex",
+     "4ef9400552a8"
+    ],
+    [
+     "stock",
+     "0x4000323a",
+     14
+    ],
+    [
+     "hex",
+     "001c0c830000000664602039000000000700675620036100008420035c806100007c610000d8203c000000a0a9002003ef880680000000002440"
+    ],
+    [
+     "stock",
+     "0x40098e6e",
+     8
+    ],
+    [
+     "hex",
+     "400a5c1c5caf00084eb9400a5f5a4fef000c7020a900610000a220036100005e20035c8061000056203c000000a0a9002f03"
+    ],
+    [
+     "stock",
+     "0x400ee116",
+     8
+    ],
+    [
+     "hex",
+     "400a5c1c5caf00084eb9400a5f5a4fef000c7020a900"
+    ],
+    [
+     "stock",
+     "0x400032b2",
+     8
+    ],
+    [
+     "stock",
+     "0x40001eb4",
+     8
+    ],
+    [
+     "hex",
+     "030243f9000000006100003422d853816afa4cd70302"
+    ],
+    [
+     "stock",
+     "0x40001efe",
+     12
+    ],
+    [
+     "hex",
+     "030243f9000000006100001220d953816afa4cd703024fef000c4e750c8000000006650443e90018c0fc0018207c4211b190d1c07205"
+    ],
+    [
+     "stock",
+     "0x40001eb4",
+     8
+    ],
+    [
+     "hex",
+     "03022003e788207c8000cfe8d1c043f900000000d3c06100001841e8002843e900286100000c4cd703024fef000c4e752010221120c122c02010221120c122c04e754ab900000000670000844fefffe848d7031e280076002039000000000700675a2003ef88207c80001b48d1c043f900000000d3c0741f22190c84000000026704d390600493909390588853826ae87203b88167262003ef8843f9000000000c8400000001670643f900000000d3c041e8ff80741f22d853826afa52830c830000000666924cd7031e4fef00184e752f0070016100ff6c201f47f9400555b44ed323d7000000002f0070026100ff54201f2ebc000000004ed32f0070036100ff42201f4fef00202f39000000004e75"
+    ],
+    [
+     "stock",
+     "0x400a700a",
+     190
+    ],
+    [
+     "stock",
+     "0x400a7148",
+     352
+    ],
+    [
+     "hex",
+     "00000000"
+    ],
+    [
+     "stock",
+     "0x400a72ac",
+     162
+    ],
+    [
+     "hex",
+     "4ef900000000203900000000"
+    ],
+    [
+     "stock",
+     "0x400004e6",
+     8
+    ],
+    [
+     "hex",
+     "000000004ef900000000"
+    ],
+    [
+     "stock",
+     "0x4007b538",
+     8
+    ],
+    [
+     "hex",
+     "4eb900000000"
+    ],
+    [
+     "stock",
+     "0x400836d6",
+     14
+    ],
+    [
+     "hex",
+     "2f0e4def00042f0e4eb9000000002f6f001c00142f0e4eb900000000508f2c5f4fef00104e754aaf000466161239404f661a"
+    ],
+    [
+     "stock",
+     "0x40055292",
+     8
+    ],
+    [
+     "hex",
+     "000000004a0166024e754ef90000"
+    ],
+    [
+     "stock",
+     "0x400f6c04",
+     10
+    ],
+    [
+     "hex",
+     "0000000000000000000000000000"
+    ],
+    [
+     "stock",
+     "0x400f7c6c",
+     8
+    ],
+    [
+     "hex",
+     "00000000"
+    ],
+    [
+     "stock",
+     "0x400f7c6c",
+     8
+    ],
+    [
+     "stock",
+     "0x400f7c6c",
+     8
+    ],
+    [
+     "hex",
+     "00000000000000000000000000000000"
+    ],
+    [
+     "stock",
+     "0x400f7c6c",
+     8
+    ],
+    [
+     "hex",
+     "00000000"
+    ],
+    [
+     "stock",
+     "0x400f7c6c",
+     8
+    ],
+    [
+     "hex",
+     "000000000000000000000000000000000000000053545831"
+    ],
+    [
+     "stock",
+     "0x40109148",
+     10
+    ],
+    [
+     "hex",
+     "000055706c6f6164004368616e004d4f4e005354004d4f4e4f00"
+    ]
+   ]
+  },
+  ".bss": {
+   "align": 4,
+   "size": 4008
+  }
+ },
+ "symbols": {
+  "REGISTER": [
+   "abs",
+   1074422654
+  ],
+  "OT_RETURN": [
+   "abs",
+   1074347558
+  ],
+  "T_QUERY": [
+   "abs",
+   9
+  ],
+  "T_PEEK": [
+   "abs",
+   122
+  ],
+  "LIMIT": [
+   "abs",
+   2048
+  ],
+  "PREVIEW": [
+   "abs",
+   1243468992
+  ],
+  "PRE_CHUNK": [
+   "abs",
+   131072
+  ],
+  "RAM_END": [
+   "abs",
+   1311626464
+  ],
+  "q_take": [
+   ".run",
+   142
+  ],
+  "rpc_addr": [
+   ".bss",
+   56
+  ],
+  "rpc_len": [
+   ".bss",
+   60
+  ],
+  "rpc_pend": [
+   ".bss",
+   0
+  ],
+  "q_key": [
+   ".run",
+   572
+  ],
+  "q_yes": [
+   ".run",
+   611
+  ],
+  "q_no": [
+   ".run",
+   613
+  ],
+  "q_none": [
+   ".run",
+   615
+  ],
+  "STATES": [
+   "abs",
+   2147535844
+  ],
+  "NOTE_ON": [
+   "abs",
+   2147487784
+  ],
+  "ST_SIZE": [
+   "abs",
+   92
+  ],
+  "RAM0": [
+   "abs",
+   1244517520
+  ],
+  "SH_LO": [
+   "abs",
+   2147487752
+  ],
+  "SH_HI": [
+   "abs",
+   2147488496
+  ],
+  "TCD32": [
+   "abs",
+   2147487744
+  ],
+  "TCD31": [
+   "abs",
+   2147487748
+  ],
+  "CHANS": [
+   "abs",
+   2147490632
+  ],
+  "FADE_ST": [
+   "abs",
+   1083605560
+  ],
+  "COEF": [
+   "abs",
+   1108455824
+  ],
+  "FMEM": [
+   "abs",
+   2147536872
+  ],
+  "FILT_HP": [
+   "abs",
+   1074420764
+  ],
+  "FILT_LP": [
+   "abs",
+   1074421594
+  ],
+  "FADE": [
+   "abs",
+   1074090656
+  ],
+  "MIX": [
+   "abs",
+   1074091444
+  ],
+  "st_side": [
+   ".run",
+   616
+  ],
+  "dma_side": [
+   ".run",
+   744
+  ],
+  "mask_calc": [
+   ".run",
+   1014
+  ],
+  "carry": [
+   ".run",
+   902
+  ],
+  "carry_t": [
+   ".run",
+   958
+  ],
+  "st_pair": [
+   ".run",
+   990
+  ],
+  "stx_mask": [
+   ".bss",
+   64
+  ],
+  "sv_a0": [
+   ".bss",
+   1608
+  ],
+  "mid": [
+   ".run",
+   1362
+  ],
+  "sv_t": [
+   ".bss",
+   1612
+  ],
+  "side_clear": [
+   ".run",
+   1466
+  ],
+  "dec_clear": [
+   ".run",
+   1434
+  ],
+  "sv_pos": [
+   ".bss",
+   1616
+  ],
+  "sv_lev": [
+   ".bss",
+   1620
+  ],
+  "sv_ph0": [
+   ".bss",
+   1624
+  ],
+  "sv_ph1": [
+   ".bss",
+   1628
+  ],
+  "dec_swap": [
+   ".run",
+   1382
+  ],
+  "stx_dec": [
+   ".bss",
+   3404
+  ],
+  "stx_fmem": [
+   ".bss",
+   3692
+  ],
+  "stx_fs": [
+   ".bss",
+   3836
+  ],
+  "stx_sb": [
+   ".bss",
+   2380
+  ],
+  "stx_fsv": [
+   ".bss",
+   3932
+  ],
+  "fade_stock": [
+   ".run",
+   1644
+  ],
+  "coef_save": [
+   ".run",
+   1828
+  ],
+  "fmem_swap": [
+   ".run",
+   1924
+  ],
+  "coef_back": [
+   ".run",
+   1862
+  ],
+  "stx_coef": [
+   ".bss",
+   3788
+  ],
+  "coef_at": [
+   ".run",
+   1896
+  ],
+  "mix_side": [
+   ".run",
+   1996
+  ],
+  "sv_ret": [
+   ".bss",
+   1632
+  ],
+  "upload_get": [
+   ".run",
+   2916
+  ],
+  "upload_set": [
+   ".run",
+   2924
+  ],
+  "chan_get": [
+   ".run",
+   2940
+  ],
+  "chan_set": [
+   ".run",
+   2964
+  ],
+  "upload_loaded": [
+   ".run",
+   3006
+  ],
+  "upload_names": [
+   ".run",
+   3132
+  ],
+  "chan_names": [
+   ".run",
+   3140
+  ],
+  "stx_voice": [
+   ".run",
+   1136
+  ],
+  "q_cnt": [
+   ".bss",
+   4
+  ],
+  "stx_c3": [
+   ".run",
+   1112
+  ],
+  "stx_fetch": [
+   ".run",
+   870
+  ],
+  "q_last": [
+   ".bss",
+   8
+  ],
+  "stx_on": [
+   ".bss",
+   68
+  ],
+  "stx_cmds_end": [
+   ".run",
+   36
+  ],
+  "stx_reg": [
+   ".run",
+   328
+  ],
+  "stx_vdone": [
+   ".run",
+   1318
+  ],
+  "stx_item_chan": [
+   ".run",
+   3088
+  ],
+  "stx_ul": [
+   ".bss",
+   72
+  ],
+  "stx_ot": [
+   ".run",
+   264
+  ],
+  "stx_c2": [
+   ".run",
+   1090
+  ],
+  "stx_type": [
+   ".run",
+   36
+  ],
+  "stx_sh": [
+   ".bss",
+   1636
+  ],
+  "stx_mixr": [
+   ".run",
+   2156
+  ],
+  "stx_vcode": [
+   ".run",
+   2202
+  ],
+  "stx_cmds": [
+   ".run",
+   0
+  ],
+  "stx_fade": [
+   ".run",
+   1540
+  ],
+  "stx_mixl": [
+   ".run",
+   2138
+  ],
+  "stx_devblock": [
+   ".run",
+   3148
+  ],
+  "stx_item_upload": [
+   ".run",
+   3044
+  ],
+  "stx_filt": [
+   ".run",
+   1658
+  ],
+  "stx_ur": [
+   ".bss",
+   840
+  ],
+  "stx_c1": [
+   ".run",
+   1058
+  ],
+  "stx_upload": [
+   ".bss",
+   4004
+  ]
+ },
+ "exports": [
+  "q_cnt",
+  "q_last",
+  "stx_c1",
+  "stx_c2",
+  "stx_c3",
+  "stx_cmds",
+  "stx_cmds_end",
+  "stx_devblock",
+  "stx_fade",
+  "stx_fetch",
+  "stx_filt",
+  "stx_item_chan",
+  "stx_item_upload",
+  "stx_mixl",
+  "stx_mixr",
+  "stx_on",
+  "stx_ot",
+  "stx_reg",
+  "stx_sh",
+  "stx_type",
+  "stx_ul",
+  "stx_upload",
+  "stx_ur",
+  "stx_vcode",
+  "stx_vdone",
+  "stx_voice"
+ ],
+ "imports": [
+  "mk_devdata_changed",
+  "mk_ts_get",
+  "mk_ts_set",
+  "str_on",
+  "str_st",
+  "trk_mono"
+ ],
+ "weak": [
+  "str_on",
+  "str_st"
+ ],
+ "relocs": [
+  [
+   ".run",
+   94,
+   "abs32",
+   "sec:.bss",
+   56
+  ],
+  [
+   ".run",
+   122,
+   "abs32",
+   "sec:.bss",
+   60
+  ],
+  [
+   ".run",
+   130,
+   "abs32",
+   "sec:.bss",
+   0
+  ],
+  [
+   ".run",
+   146,
+   "abs32",
+   "sec:.bss",
+   4
+  ],
+  [
+   ".run",
+   152,
+   "abs32",
+   "sec:.bss",
+   8
+  ],
+  [
+   ".run",
+   214,
+   "abs32",
+   "sec:.bss",
+   4004
+  ],
+  [
+   ".run",
+   236,
+   "abs32",
+   "sec:.bss",
+   56
+  ],
+  [
+   ".run",
+   242,
+   "abs32",
+   "sec:.bss",
+   60
+  ],
+  [
+   ".run",
+   250,
+   "abs32",
+   "sec:.bss",
+   0
+  ],
+  [
+   ".run",
+   276,
+   "abs32",
+   "sec:.bss",
+   0
+  ],
+  [
+   ".run",
+   292,
+   "abs32",
+   "sec:.bss",
+   56
+  ],
+  [
+   ".run",
+   302,
+   "abs32",
+   "sec:.bss",
+   60
+  ],
+  [
+   ".run",
+   308,
+   "abs32",
+   "sec:.bss",
+   0
+  ],
+  [
+   ".run",
+   314,
+   "abs32",
+   "sec:.bss",
+   0
+  ],
+  [
+   ".run",
+   670,
+   "abs32",
+   "sym:trk_mono",
+   0
+  ],
+  [
+   ".run",
+   690,
+   "abs32",
+   "sym:str_on",
+   0
+  ],
+  [
+   ".run",
+   704,
+   "abs32",
+   "sym:str_st",
+   0
+  ],
+  [
+   ".run",
+   828,
+   "abs32",
+   "sec:.bss",
+   1636
+  ],
+  [
+   ".run",
+   920,
+   "abs32",
+   "sec:.bss",
+   1636
+  ],
+  [
+   ".run",
+   934,
+   "abs32",
+   "sec:.bss",
+   1636
+  ],
+  [
+   ".run",
+   1000,
+   "abs32",
+   "sec:.bss",
+   64
+  ],
+  [
+   ".run",
+   1044,
+   "abs32",
+   "sec:.bss",
+   64
+  ],
+  [
+   ".run",
+   1138,
+   "abs32",
+   "sec:.bss",
+   1608
+  ],
+  [
+   ".run",
+   1158,
+   "abs32",
+   "sec:.bss",
+   1612
+  ],
+  [
+   ".run",
+   1172,
+   "abs32",
+   "sec:.bss",
+   1612
+  ],
+  [
+   ".run",
+   1184,
+   "abs32",
+   "sec:.bss",
+   68
+  ],
+  [
+   ".run",
+   1194,
+   "abs32",
+   "sec:.bss",
+   1612
+  ],
+  [
+   ".run",
+   1200,
+   "abs32",
+   "sec:.bss",
+   64
+  ],
+  [
+   ".run",
+   1208,
+   "abs32",
+   "sec:.bss",
+   64
+  ],
+  [
+   ".run",
+   1214,
+   "abs32",
+   "sec:.bss",
+   68
+  ],
+  [
+   ".run",
+   1226,
+   "abs32",
+   "sec:.bss",
+   68
+  ],
+  [
+   ".run",
+   1256,
+   "abs32",
+   "sec:.bss",
+   1616
+  ],
+  [
+   ".run",
+   1266,
+   "abs32",
+   "sec:.bss",
+   1620
+  ],
+  [
+   ".run",
+   1276,
+   "abs32",
+   "sec:.bss",
+   1624
+  ],
+  [
+   ".run",
+   1286,
+   "abs32",
+   "sec:.bss",
+   1628
+  ],
+  [
+   ".run",
+   1296,
+   "abs32",
+   "sec:.bss",
+   1608
+  ],
+  [
+   ".run",
+   1308,
+   "abs32",
+   "sec:.bss",
+   1636
+  ],
+  [
+   ".run",
+   1314,
+   "abs32",
+   "sec:.run",
+   2202
+  ],
+  [
+   ".run",
+   1324,
+   "abs32",
+   "sec:.bss",
+   1616
+  ],
+  [
+   ".run",
+   1334,
+   "abs32",
+   "sec:.bss",
+   1620
+  ],
+  [
+   ".run",
+   1344,
+   "abs32",
+   "sec:.bss",
+   1624
+  ],
+  [
+   ".run",
+   1354,
+   "abs32",
+   "sec:.bss",
+   1628
+  ],
+  [
+   ".run",
+   1364,
+   "abs32",
+   "sec:.bss",
+   1608
+  ],
+  [
+   ".run",
+   1392,
+   "abs32",
+   "sec:.bss",
+   1612
+  ],
+  [
+   ".run",
+   1402,
+   "abs32",
+   "sec:.bss",
+   3404
+  ],
+  [
+   ".run",
+   1438,
+   "abs32",
+   "sec:.bss",
+   1612
+  ],
+  [
+   ".run",
+   1448,
+   "abs32",
+   "sec:.bss",
+   3404
+  ],
+  [
+   ".run",
+   1476,
+   "abs32",
+   "sec:.bss",
+   1612
+  ],
+  [
+   ".run",
+   1486,
+   "abs32",
+   "sec:.bss",
+   3404
+  ],
+  [
+   ".run",
+   1502,
+   "abs32",
+   "sec:.bss",
+   1612
+  ],
+  [
+   ".run",
+   1510,
+   "abs32",
+   "sec:.bss",
+   3692
+  ],
+  [
+   ".run",
+   1542,
+   "abs32",
+   "sec:.bss",
+   68
+  ],
+  [
+   ".run",
+   1562,
+   "abs32",
+   "sec:.bss",
+   3836
+  ],
+  [
+   ".run",
+   1576,
+   "abs32",
+   "sec:.bss",
+   2380
+  ],
+  [
+   ".run",
+   1582,
+   "abs32",
+   "sec:.bss",
+   3836
+  ],
+  [
+   ".run",
+   1594,
+   "abs32",
+   "sec:.bss",
+   3932
+  ],
+  [
+   ".run",
+   1608,
+   "abs32",
+   "sec:.bss",
+   3836
+  ],
+  [
+   ".run",
+   1618,
+   "abs32",
+   "sec:.bss",
+   3932
+  ],
+  [
+   ".run",
+   1684,
+   "abs32",
+   "sec:.bss",
+   68
+  ],
+  [
+   ".run",
+   1724,
+   "abs32",
+   "sec:.bss",
+   2380
+  ],
+  [
+   ".run",
+   1838,
+   "abs32",
+   "sec:.bss",
+   3788
+  ],
+  [
+   ".run",
+   1872,
+   "abs32",
+   "sec:.bss",
+   3788
+  ],
+  [
+   ".run",
+   1946,
+   "abs32",
+   "sec:.bss",
+   3692
+  ],
+  [
+   ".run",
+   1998,
+   "abs32",
+   "sec:.bss",
+   68
+  ],
+  [
+   ".run",
+   2020,
+   "abs32",
+   "sec:.bss",
+   68
+  ],
+  [
+   ".run",
+   2042,
+   "abs32",
+   "sec:.bss",
+   2380
+  ],
+  [
+   ".run",
+   2086,
+   "abs32",
+   "sec:.bss",
+   72
+  ],
+  [
+   ".run",
+   2100,
+   "abs32",
+   "sec:.bss",
+   840
+  ],
+  [
+   ".run",
+   2158,
+   "abs32",
+   "sec:.bss",
+   1632
+  ],
+  [
+   ".run",
+   2174,
+   "abs32",
+   "sec:.run",
+   2180
+  ],
+  [
+   ".run",
+   2196,
+   "abs32",
+   "sec:.bss",
+   1632
+  ],
+  [
+   ".run",
+   2744,
+   "abs32",
+   "sym:stx_sb",
+   0
+  ],
+  [
+   ".run",
+   2912,
+   "abs32",
+   "sec:.run",
+   1318
+  ],
+  [
+   ".run",
+   2918,
+   "abs32",
+   "sec:.bss",
+   4004
+  ],
+  [
+   ".run",
+   2930,
+   "abs32",
+   "sec:.bss",
+   4004
+  ],
+  [
+   ".run",
+   2936,
+   "abs32",
+   "sym:mk_devdata_changed",
+   0
+  ],
+  [
+   ".run",
+   2950,
+   "abs32",
+   "sym:mk_ts_get",
+   0
+  ],
+  [
+   ".run",
+   2978,
+   "abs32",
+   "sym:mk_ts_get",
+   0
+  ],
+  [
+   ".run",
+   2992,
+   "abs32",
+   "sym:mk_ts_set",
+   0
+  ],
+  [
+   ".run",
+   3026,
+   "abs32",
+   "sec:.bss",
+   4004
+  ],
+  [
+   ".run",
+   3038,
+   "abs32",
+   "sym:mk_devdata_changed",
+   0
+  ],
+  [
+   ".run",
+   3048,
+   "abs32",
+   "sec:.run",
+   3164
+  ],
+  [
+   ".run",
+   3056,
+   "abs32",
+   "sec:.run",
+   2916
+  ],
+  [
+   ".run",
+   3060,
+   "abs32",
+   "sec:.run",
+   2924
+  ],
+  [
+   ".run",
+   3072,
+   "abs32",
+   "sec:.run",
+   3132
+  ],
+  [
+   ".run",
+   3092,
+   "abs32",
+   "sec:.run",
+   3171
+  ],
+  [
+   ".run",
+   3100,
+   "abs32",
+   "sec:.run",
+   2940
+  ],
+  [
+   ".run",
+   3104,
+   "abs32",
+   "sec:.run",
+   2964
+  ],
+  [
+   ".run",
+   3116,
+   "abs32",
+   "sec:.run",
+   3140
+  ],
+  [
+   ".run",
+   3132,
+   "abs32",
+   "sec:.run",
+   3176
+  ],
+  [
+   ".run",
+   3136,
+   "abs32",
+   "sec:.run",
+   3180
+  ],
+  [
+   ".run",
+   3140,
+   "abs32",
+   "sec:.run",
+   3180
+  ],
+  [
+   ".run",
+   3144,
+   "abs32",
+   "sec:.run",
+   3183
+  ],
+  [
+   ".run",
+   3156,
+   "abs32",
+   "sec:.bss",
+   4004
+  ],
+  [
+   ".run",
+   3160,
+   "abs32",
+   "sec:.run",
+   3006
+  ]
+ ],
+ "sites": [
+  {
+   "addr": "0x40083a2a",
+   "len": 4,
+   "stock_sha256": "68847349fa86a99d258e27fa925f26ae7397c55316b677fd598f56fe0e7d389f",
+   "new": "48780024",
+   "kind": "code",
+   "relocs": []
+  },
+  {
+   "addr": "0x40083a60",
+   "len": 6,
+   "stock_sha256": "dd4d6872f37cb7eda71cb65235a02a7bae01731a6394eba20d4b45cd750978cf",
+   "new": "487900000000",
+   "kind": "code",
+   "relocs": [
+    [
+     2,
+     "abs32",
+     "sym:stx_cmds_end",
+     0
+    ]
+   ]
+  },
+  {
+   "addr": "0x40083a66",
+   "len": 4,
+   "stock_sha256": "ea91a2b8e2204930875df454ce847e356e94fd0b63b462c8b0a9f53f626fc36d",
+   "new": "43e90024",
+   "kind": "code",
+   "relocs": []
+  },
+  {
+   "addr": "0x40083a6a",
+   "len": 6,
+   "stock_sha256": "5a60da03948622c36da425a0891bc9b3bf62afbf39352c48b438fc8d5b0e5291",
+   "new": "487900000000",
+   "kind": "code",
+   "relocs": [
+    [
+     2,
+     "abs32",
+     "sym:stx_cmds",
+     0
+    ]
+   ]
+  },
+  {
+   "addr": "0x4009161e",
+   "len": 6,
+   "stock_sha256": "f41d2825cfc7c5d7bbb407c68e14813e278132443b0810368e6276d256758e6a",
+   "new": "4eb900000000",
+   "kind": "code",
+   "relocs": [
+    [
+     2,
+     "abs32",
+     "sym:stx_type",
+     0
+    ]
+   ]
+  },
+  {
+   "addr": "0x40093e1e",
+   "len": 8,
+   "stock_sha256": "b23da00179c0a4e6e3256d5002ec0db3cf0ffd50d05573fba45e443af630b369",
+   "new": "4ef9000000004e71",
+   "kind": "code",
+   "relocs": [
+    [
+     2,
+     "abs32",
+     "sym:stx_ot",
+     0
+    ]
+   ]
+  },
+  {
+   "addr": "0x400a1462",
+   "len": 6,
+   "stock_sha256": "1f5ded72cdac3cf751d4a35f4e9bb6dc38a97c9dd3c7bcfe0c3a41d206fd8ebf",
+   "new": "4eb900000000",
+   "kind": "code",
+   "relocs": [
+    [
+     2,
+     "abs32",
+     "sym:stx_reg",
+     0
+    ]
+   ]
+  },
+  {
+   "addr": "0x400a1702",
+   "len": 6,
+   "stock_sha256": "1f5ded72cdac3cf751d4a35f4e9bb6dc38a97c9dd3c7bcfe0c3a41d206fd8ebf",
+   "new": "4eb900000000",
+   "kind": "code",
+   "relocs": [
+    [
+     2,
+     "abs32",
+     "sym:stx_reg",
+     0
+    ]
+   ]
+  },
+  {
+   "addr": "0x400a180c",
+   "len": 6,
+   "stock_sha256": "1f5ded72cdac3cf751d4a35f4e9bb6dc38a97c9dd3c7bcfe0c3a41d206fd8ebf",
+   "new": "4eb900000000",
+   "kind": "code",
+   "relocs": [
+    [
+     2,
+     "abs32",
+     "sym:stx_reg",
+     0
+    ]
+   ]
+  },
+  {
+   "addr": "0x400a6afc",
+   "len": 6,
+   "stock_sha256": "c085fbb432c58a3a2bb738aea471efd2a73364a6f354e420cde908424429f91a",
+   "new": "4ef900000000",
+   "kind": "code",
+   "relocs": [
+    [
+     2,
+     "abs32",
+     "sym:stx_c1",
+     0
+    ]
+   ]
+  },
+  {
+   "addr": "0x400a6ff8",
+   "len": 6,
+   "stock_sha256": "f4f35de05ca89d2c4318ce6ae52877dcac8d0974ca3e3df1a8bf94a679d3e449",
+   "new": "4ef900000000",
+   "kind": "code",
+   "relocs": [
+    [
+     2,
+     "abs32",
+     "sym:stx_c2",
+     0
+    ]
+   ]
+  },
+  {
+   "addr": "0x400a7112",
+   "len": 6,
+   "stock_sha256": "d42ab9508e5b606a1582c2960a60c7a30dfd81ca01a56fcc7ff68029f54a7845",
+   "new": "4ef900000000",
+   "kind": "code",
+   "relocs": [
+    [
+     2,
+     "abs32",
+     "sym:stx_c3",
+     0
+    ]
+   ]
+  },
+  {
+   "addr": "0x400a700a",
+   "len": 8,
+   "stock_sha256": "5b6a37c9c6d14f92f2732e242560731b7192a8bcf134777d7e3664be3e183029",
+   "new": "4ef9000000004e71",
+   "kind": "code",
+   "relocs": [
+    [
+     2,
+     "abs32",
+     "sym:stx_voice",
+     0
+    ]
+   ]
+  },
+  {
+   "addr": "0x400552a0",
+   "len": 8,
+   "stock_sha256": "507353099d0165038c68974b2f57dbdec61e24a2758e47418233ccbcb59b8d96",
+   "new": "4ef9000000004e71",
+   "kind": "code",
+   "relocs": [
+    [
+     2,
+     "abs32",
+     "sym:stx_fade",
+     0
+    ]
+   ]
+  },
+  {
+   "addr": "0x400a629a",
+   "len": 8,
+   "stock_sha256": "d43e64e0210fdd98e9dd8476d7cea57c93492ec611d50eddcbf6fd90ea80cef7",
+   "new": "4ef9000000004e71",
+   "kind": "code",
+   "relocs": [
+    [
+     2,
+     "abs32",
+     "sym:stx_filt",
+     0
+    ]
+   ]
+  },
+  {
+   "addr": "0x40055a9c",
+   "len": 6,
+   "stock_sha256": "ab27c06beb12ee64ca34268178b2ab0d9f0aedb0422e09468043621e6eed7d7a",
+   "new": "4eb900000000",
+   "kind": "code",
+   "relocs": [
+    [
+     2,
+     "abs32",
+     "sym:stx_mixl",
+     0
+    ]
+   ]
+  },
+  {
+   "addr": "0x40055ad6",
+   "len": 6,
+   "stock_sha256": "6d5b095df98c00508a26551a3f23c45ed2dab22311a1b72d3ef4798187768a7e",
+   "new": "4eb900000000",
+   "kind": "code",
+   "relocs": [
+    [
+     2,
+     "abs32",
+     "sym:stx_mixr",
+     0
+    ]
+   ]
+  }
+ ],
+ "collections": {},
+ "contribute": [
+  {
+   "to": "mk_voice_fetch",
+   "order": 20,
+   "data": "00000000",
+   "relocs": [
+    [
+     0,
+     "abs32",
+     "sym:stx_fetch",
+     0
+    ]
+   ],
+   "claims": []
+  },
+  {
+   "to": "mk_items",
+   "order": 40,
+   "data": "00000000",
+   "relocs": [
+    [
+     0,
+     "abs32",
+     "sym:stx_item_chan",
+     0
+    ]
+   ],
+   "claims": []
+  },
+  {
+   "to": "mk_items",
+   "order": 40,
+   "data": "00000000",
+   "relocs": [
+    [
+     0,
+     "abs32",
+     "sym:stx_item_upload",
+     0
+    ]
+   ],
+   "claims": []
+  },
+  {
+   "to": "mk_devdata",
+   "order": 50,
+   "data": "00000000",
+   "relocs": [
+    [
+     0,
+     "abs32",
+     "sym:stx_devblock",
+     0
+    ]
+   ],
+   "claims": []
+  }
+ ],
+ "copied": [],
+ "resources": {
+  "names": [
+   "devdata:STX1"
+  ]
+ },
+ "requires": [
+  "core",
+  "modkit"
+ ],
+ "conflicts": [],
+ "build": {
+  "sources": {
+   "stereo.s": "c9754a4cc9efb174a8c9cdcc3f7b201b2c7c27e764b003be31a702123939f409",
+   "voice_gen.s": "1ece3386350471739b7069ab0dde777c14a0b01cf120a9f8c00436a5e7ca2a04",
+   "stereo_menu.c": "40f7440cf6565800666c6ddafd66998e8f3cd0ea66f31c859f5dc1a9d668d937"
+  }
+ },
+ "signature": null
+}

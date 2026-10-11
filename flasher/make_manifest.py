@@ -5,7 +5,7 @@ Pyodide (paths relative to the repository root, which is what GitHub Pages serve
     python3 flasher/make_manifest.py           regenerate
     python3 flasher/make_manifest.py --check   exit 1 if files.json is stale
 
-Run it after adding or removing a tweak. --check also checks that tweak.py's
+Run it after adding or removing a mod (mods/<device>/*.elemod) or updating elekloader/. --check also checks that tweak.py's
 __version__ is the top entry of CHANGELOG.md (which the flasher shows).
 """
 import glob
@@ -19,10 +19,10 @@ OUT = os.path.join(ROOT, 'flasher', 'files.json')
 
 
 def files():
-    pats = ['tweak.py', 'mtlib/*.py', 'tweaks/*/*.json', 'flasher/web.py']
+    pats = ['elekloader/**/*.py', 'mods/*/*.elemod', 'flasher/web.py']
     out = []
     for p in pats:
-        out += sorted(os.path.relpath(f, ROOT) for f in glob.glob(os.path.join(ROOT, p)))
+        out += sorted(os.path.relpath(f, ROOT) for f in glob.glob(os.path.join(ROOT, p), recursive=True))
     return [f.replace(os.sep, '/') for f in out]
 
 
