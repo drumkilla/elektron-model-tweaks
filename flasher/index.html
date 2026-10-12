@@ -33,12 +33,19 @@
     <div id="fwinfo" class="info" hidden></div>
   </section>
 
-  <section id="step-pick" class="step" hidden>
+  <section id="step-pick" class="step browsing">
     <h2><span class="n">02</span> Mods</h2>
+    <div id="browse" class="browse">
+      <div id="devices" class="devices" role="tablist">
+        <button type="button" role="tab" data-dev="model-samples">Model:Samples</button>
+        <button type="button" role="tab" data-dev="model-cycles">Model:Cycles</button>
+      </div>
+      <p class="hint">What is available for each device. Drop your firmware above to choose mods and build.</p>
+    </div>
     <div class="pick">
       <div>
         <div id="tweaks"></div>
-        <button id="build" type="button">Build the firmware</button>
+        <button id="build" type="button" hidden>Build the firmware</button>
         <p id="build-status" class="status"></p>
       </div>
       <aside id="details-col"><div id="details" class="details"></div></aside>

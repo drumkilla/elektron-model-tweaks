@@ -14,17 +14,26 @@ const st = { py: null, web: null, input: null, out: null, outName: null, sending
 // ----------------------------------------------------------------------------
 // Engine: Pyodide + the repository's Python
 // ----------------------------------------------------------------------------
-async function loadEngine() {
-  const py = await loadPyodide();
-  const files = await (await fetch("files.json", { cache: "no-cache" })).json();
-  py.FS.mkdirTree("/app");
-  await Promise.all(files.map(async (rel) => {
-    const r = await fetch("../" + rel, { cache: "no-cache" });
+// The repository's files, each fetched once (the mod list and the engine share them).
+const fileList = fetch("files.json", { cache: "no-cache" }).then((r) => r.json());
+const fetched = {};
+function repoFile(rel) {
+  return fetched[rel] = fetched[rel] || fetch("../" + rel, { cache: "no-cache" }).then((r) => {
     if (!r.ok) throw new Error(`could not load ${rel} (${r.status}). The page needs the whole repository: ` +
       "serve its root folder (e.g. python3 -m http.server in model-tweaks/) and open /flasher/");
+    return r.arrayBuffer();
+  });
+}
+
+async function loadEngine() {
+  const files = await fileList;
+  files.forEach(repoFile);                               // start the downloads while Pyodide loads
+  const py = await loadPyodide();
+  py.FS.mkdirTree("/app");
+  await Promise.all(files.map(async (rel) => {
     const dst = "/app/" + (rel === "flasher/web.py" ? "web.py" : rel);
     py.FS.mkdirTree(dst.slice(0, dst.lastIndexOf("/")));
-    py.FS.writeFile(dst, new Uint8Array(await r.arrayBuffer()));
+    py.FS.writeFile(dst, new Uint8Array(await repoFile(rel)));
   }));
   py.runPython("import sys; sys.path.insert(0, '/app')");
   st.py = py;
@@ -49,7 +58,7 @@ const paint = () => new Promise((r) => setTimeout(r, 30));   // let the page red
 // ----------------------------------------------------------------------------
 async function takeFile(file) {
   if (!file) return;
-  $("step-pick").hidden = true;
+  showBrowse();
   $("step-get").hidden = true;
   $("fwinfo").hidden = true;
   setStatus("engine", "Reading " + file.name + "…");
@@ -80,6 +89,9 @@ async function takeFile(file) {
     : "the MAIN OS matches the original, the file itself does not; normal if it was repacked");
   fi.appendChild(dl);
   fi.hidden = false;
+  $("step-pick").classList.remove("browsing");
+  $("browse").hidden = true;
+  $("build").hidden = false;
   showTweaks(info.tweaks);
 }
 
@@ -89,6 +101,43 @@ function addRow(dl, k, v) {
   dt.textContent = k;
   dd.textContent = v;
   dl.append(dt, dd);
+}
+
+// ----------------------------------------------------------------------------
+// Step 2 before a firmware is loaded: every device's mods, to read about (no
+// checkboxes, no build). The list is what web.py would offer: the .elemod files in
+// files.json, without the hidden requirements, by title.
+// ----------------------------------------------------------------------------
+const HIDDEN = new Set(["core", "modkit"]);
+const catalog = fileList.then((files) => Promise.all(
+  files.filter((rel) => /^mods\/[^/]+\/[^/]+\.elemod$/.test(rel)).map(async (rel) => {
+    const d = JSON.parse(new TextDecoder().decode(await repoFile(rel)));
+    return { dev: rel.split("/")[1], id: d.id, name: d.title || d.id, version: d.version || "",
+             description: [d.description || ""], links: [] };
+  }))).then((mods) => {
+  const byDev = {};
+  for (const m of mods) if (!HIDDEN.has(m.id)) (byDev[m.dev] = byDev[m.dev] || []).push(m);
+  for (const list of Object.values(byDev)) list.sort((a, b) => a.name.toLowerCase().localeCompare(b.name.toLowerCase()));
+  return byDev;
+});
+let browseDev = "model-samples";
+
+async function showBrowse(dev) {
+  if (dev) browseDev = dev;
+  const step = $("step-pick");
+  step.classList.add("browsing");
+  $("browse").hidden = false;
+  $("build").hidden = true;
+  for (const b of document.querySelectorAll("#devices button")) b.setAttribute("aria-selected", b.dataset.dev === browseDev);
+  let byDev;
+  try {
+    byDev = await catalog;
+  } catch (e) {
+    $("tweaks").textContent = "Could not load the list of mods: " + e.message;
+    return;
+  }
+  if (!step.classList.contains("browsing")) return;      // a firmware was loaded meanwhile
+  showTweaks(byDev[browseDev] || []);
 }
 
 // ----------------------------------------------------------------------------
@@ -427,6 +476,8 @@ drop.addEventListener("drop", (e) => {
   takeFile(e.dataTransfer.files[0]);
 });
 $("build").addEventListener("click", build);
+for (const b of document.querySelectorAll("#devices button")) b.addEventListener("click", () => showBrowse(b.dataset.dev));
+showBrowse();
 $("download").addEventListener("click", download);
 $("midi-connect").addEventListener("click", connectMidi);
 $("send").addEventListener("click", send);

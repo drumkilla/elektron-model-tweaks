@@ -162,6 +162,16 @@ progress::-moz-progress-bar { background: var(--accent); }
 .changelog p { color: var(--ink-dim); margin: 10px 0 4px; }
 .changelog strong { color: var(--ink); font-weight: 500; }
 
+/* before a firmware is loaded: every device's mods, to read (no checkboxes, no build) */
+.devices { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 10px; }
+.devices button { margin-top: 0; }
+.devices button[aria-selected=true] { border-color: var(--accent); color: var(--accent); background: var(--accent-faint); }
+.browse .hint { margin-bottom: 14px; }
+.browsing .tweak { grid-template-columns: 1fr; }
+.browsing .tweak input { display: none; }
+.browsing .tweak:has(input:checked) { border-color: var(--rule); background: var(--bg); }
+.browsing .tweak:has(input:checked):hover { border-color: var(--ink-faint); }
+
 /* the mods and a mod's details beside them (under its card on a narrow screen) */
 #step-pick { width: min(1180px, calc(100vw - 32px)); position: relative; left: 50%; transform: translateX(-50%); }
 .pick { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); gap: 18px; align-items: start; }
