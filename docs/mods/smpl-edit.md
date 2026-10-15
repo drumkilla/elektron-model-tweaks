@@ -32,10 +32,19 @@ screen at any zoom:
 While the popup shows, LEVEL/DATA zooms instead of changing the track level; when the
 popup closes the zoom goes back to automatic. P-locks get the same steps.
 
+## Keep it open
+
+**Push LEVEL/DATA** while the popup shows: it stays on the screen (a padlock next to the
+zoom) for as long as you need, with the knobs and the zoom working as usual. Push again
+and it closes after the usual moment; turning another knob closes it too.
+
+![LEVEL/DATA pushed: the popup stays (the padlock); pushed again, it closes](media/smpl-edit-pin.png)
+
 ## Zero crossings
 
-**Track Setup** (FUNC + TRACK) **> Zero** `ON`, per track: the notes start, end and
-loop on the zero crossing nearest to SMPL START / SMPL LENGTH, which avoids clicks.
+**Track Setup** (FUNC + TRACK) **> Zero** `ON`, per track (it belongs to the track's
+sound, and goes with a copied sound): the notes start, end and loop on the zero crossing
+nearest to SMPL START / SMPL LENGTH, which avoids clicks.
 The popup then shows the markers where the notes really start and end, with `0` next
 to the zoom. The zoom stays on where the knob is (the small ticks above and below), so
 you see the marker jump from one zero crossing to the next as you turn.
@@ -49,4 +58,7 @@ you see the marker jump from one zero crossing to the next as you turn.
 - The values are stored as the stock firmware stores them: a project plays the same
   on stock firmware, which shows only the whole part of the value.
 - PAGE in grid recording still turns the pattern pages, as stock.
+- Turning SMPL START / SMPL LENGTH with Zero on while the track plays costs little CPU:
+  the search follows the knob a short way at a time.
+- A stereo sample (the Stereo samples mod) shows its whole length, as its mono mix.
 - Stretched notes (the Time-stretch mod) are not moved to zero crossings.

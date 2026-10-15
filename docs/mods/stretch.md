@@ -6,7 +6,8 @@ metallic sound of the old samplers is part of it).
 
 ## Setting it up
 
-Per track, in **Track Setup** (FUNC + TRACK) **> Strch**:
+Per track, in **Track Setup** (FUNC + TRACK) **> Strch** (the settings belong to the
+track's sound: they go with a copied sound and are saved with the project):
 
 - **Play** `STD` / `STR` / `BPM`: stock playback / stretch by Time / stretch to the
   tempo.
@@ -40,14 +41,14 @@ Every Strch item can be locked per step:
 - Trigless trigs (FUNC + TRIG) work: the playing note takes the new settings from where
   it is.
 - The locks are saved with the project and with Save Pattern to Project, and come back
-  with Reload pattern and Undo. Up to 51 different sets of locked values per pattern.
+  with Reload pattern and Undo. Up to 128 different sets of locked values per pattern.
 
 ## Back where you were
 
-**CONFIG > Device > Last Page** (`ON` by default): FUNC + TRACK reopens Track Setup on
+**CONFIG > Mods > Last Page** (`ON` by default): FUNC + TRACK reopens Track Setup on
 the row and the page you left it on.
 
-![CONFIG > Device > Last Page](media/modkit-last-page.png)
+![CONFIG > Mods > Last Page](media/modkit-last-page.png)
 
 ## Good to know
 

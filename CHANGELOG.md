@@ -4,6 +4,48 @@ Versions follow [semantic versioning](https://semver.org): a new tweak or a new
 behaviour raises the minor number, a fix that changes nothing you rely on raises
 the patch number. The web flasher shows this file.
 
+## 2.2.0 — 2026-10-13
+
+New mod for **Model:Samples**:
+
+- **Sidechain duck**: one track's notes dip another track's level, which comes
+  back over a time you set: Track Setup (FUNC + TRACK) > Duck: Src (the source
+  track), Amt (down to −60 dB), Rel (25–1500 ms). P-lockable per step.
+
+New in **Model:Samples** mods:
+
+- **Sample edit**: push LEVEL/DATA to keep the SMPL START / LENGTH popup open
+  (a padlock shows); push again to let it close. Thanks to **DarkDigital** for
+  the idea.
+- **CONFIG > Mods**: a screen of its own for the mods' device settings (Upload,
+  Last Page), instead of CONFIG > Device.
+
+Changed:
+
+- **Mods' settings belong to the sound**: Strch, Chan, Zero and Duck go with a
+  copied or pasted sound and are reset with it, like the stock sound
+  parameters. They are saved in the project's own place on the +Drive, also
+  by Save Pattern to Project. Up to 128 different sets of locked values per
+  pattern (was 51).
+- Transfer's project backup now carries the mods' settings: a project sent
+  back to the device gets them back (a backup made before 2.2.0 has none).
+- Projects saved with 2.1.0 are converted when loaded. A project saved with
+  2.2.0 loses its mods' settings on 2.1.0 firmware.
+
+Fixed:
+
+- **Sample edit**: with Zero on, turning SMPL START / LENGTH while the track
+  played could glitch the sound (the zero-crossing search took too much CPU).
+  Thanks to **priorself** for finding it.
+- **Stereo samples**: the sample browser played only a short mono preview
+  (~0.7 s) even of a sample already loaded into the project; now it plays the
+  loaded sample from its own copy, whole. Thanks to **DarkDigital** for
+  pointing it out.
+- **Sample edit**: a stereo sample's popup showed only half of its length.
+  Thanks to **DarkDigital** for finding it.
+- With Last Page on, Track Setup could open with the cursor on a row off the
+  screen. Thanks to **priorself** for noticing it.
+
 ## 2.1.0 — 2026-10-11
 
 New mod for **Model:Samples**:

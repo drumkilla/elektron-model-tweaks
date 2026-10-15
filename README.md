@@ -77,6 +77,7 @@ python3 tweak.py --verify FW_mod.syx                  recheck a finished file
 | [Stereo samples](#stereo-samples--stereo) | | ✓ |
 | [Time-stretch](#time-stretch--stretch) | | ✓ |
 | [Sample edit](#sample-edit--smpl-edit) | | ✓ |
+| [Sidechain duck](#sidechain-duck--duck) | | ✓ |
 | [Fast audio](#fast-audio--fast-audio) | ✓ | |
 | [modkit](#modkit--modkit) (added when a mod needs it) | | ✓ |
 
@@ -163,7 +164,7 @@ destination, and is saved with the sound and the project.
 
 Model:Samples only. Stereo WAVs stay stereo:
 
-* **Upload:** set **CONFIG > DEVICE > Upload** to `ST` (default `MON`, as stock)
+* **Upload:** set **CONFIG > Mods > Upload** to `ST` (default `MON`, as stock)
   and send stereo WAVs with **Elektron Transfer 1.9.5 or newer**. With `MON`
   Transfer mixes them to mono, as stock.
 * **Playback:** a track playing a stereo sample is stereo through the filter,
@@ -171,10 +172,12 @@ Model:Samples only. Stereo WAVs stay stereo:
   `A16` (`usb16`) the track's pair carries its left and right.
 * **Track Setup** (FUNC + TRACK) **> Chan**: `ST` / `MONO`. `MONO` plays the
   track's stereo samples as their mono mix (and saves the CPU of the second
-  channel).
+  channel). Chan belongs to the track's sound and goes with a copied sound.
 * A stereo sample takes twice the sample memory, and each stereo track about
-  5 % more CPU. The sample browser's preview plays the mono mix of the first
-  ~0.7 s.
+  5 % more CPU.
+* The sample browser plays a sample already loaded into the project from its
+  own copy, whole; a sample not loaded yet previews as stock (the mono mix of
+  its first ~0.7 s).
 * Samples uploaded as stereo play their mono mix on the stock firmware.
 
 Note: stereo samples are CPU hungry. Playing several at once (five stereo tracks reach ~100 % CPU) can make the device stop responding, so use them wisely.
@@ -184,7 +187,8 @@ Note: stereo samples are CPU hungry. Playing several at once (five stereo tracks
 Model:Samples only. An Akai-style real-time time-stretch: the sample plays at
 its own pitch for a length you choose, cut into short cycles that repeat or
 skip (the grainy, metallic sound of the old samplers is part of it). Per track,
-in **Track Setup** (FUNC + TRACK) **> Strch**:
+in **Track Setup** (FUNC + TRACK) **> Strch** (the settings belong to the
+track's sound and go with a copied sound):
 
 | Item | Values | |
 |---|---|---|
@@ -220,7 +224,7 @@ Every Strch item can be locked per step, like a knob on the main screen:
   (STD ↔ STR / BPM).
 * The locks are saved with the project and with Save Pattern to Project, and
   come back with Reload pattern and Undo.
-* Up to 51 different sets of locked values per pattern (steps with the same
+* Up to 128 different sets of locked values per pattern (steps with the same
   values share one).
 * A project with these locks loads and plays on stock firmware as usual
   (without the stretch), and loads back with all its locks on the mod. Saving it
@@ -237,12 +241,16 @@ Model:Samples only. Finer SMPL START and SMPL LENGTH, with the sample in sight.
 * The zoom is ×8; hold **PAGE** for ×128, or turn **LEVEL/DATA** while the
   popup shows to zoom from ×1 to ×4096 (the track level is not changed
   meanwhile; the zoom goes back to automatic when the popup closes).
+* **Push LEVEL/DATA** while the popup shows to keep it open (a padlock next to
+  the zoom); push again and it closes as usual. Turning another knob closes it
+  too.
 * The knob's step follows the zoom: one detent moves the marker about as far on
   screen at any zoom. ×8 steps whole values as stock; PAGE (×128) steps 1/16;
   zoomed further in with LEVEL/DATA, down to 1/256 of a value, the finest the
   parameter holds. Hold PAGE on a zoom you chose for a step four times finer.
   P-locks get the same steps.
-* **Track Setup** (FUNC + TRACK) **> Zero** `OFF` / `ON`, per track: the notes
+* **Track Setup** (FUNC + TRACK) **> Zero** `OFF` / `ON`, per track (with the
+  track's sound): the notes
   start, end and loop on the zero crossing nearest to SMPL START / SMPL LENGTH
   (searched up to ±512 frames), which avoids clicks. The popup then shows the
   markers where the notes really start and end, and `0` next to the zoom.
@@ -250,6 +258,28 @@ Model:Samples only. Finer SMPL START and SMPL LENGTH, with the sample in sight.
 * The values are stored as the stock firmware stores them: a project plays the
   same on stock firmware, which shows the whole part of the value.
 * PAGE in grid recording still turns the pattern pages, as stock.
+
+### Sidechain duck — `duck`
+
+Model:Samples only. Ducking ("pumping") without a compressor: one track's notes
+dip another track's level, which comes back over a time you set. On the track
+to be ducked, **Track Setup** (FUNC + TRACK) **> Duck**:
+
+| Item | Values | |
+|---|---|---|
+| Src | `OFF` / `T1`–`T6` | the track whose notes duck this one (`OFF`: stock) |
+| Amt | 0 – 100 | the depth, 0 to −60 dB (default 50) |
+| Rel | 25 – 1500 ms | how long the level takes to come back (default 200 ms) |
+
+* A source note pulls the level down in about 3 ms, then it comes back evenly
+  (in decibels) over Rel. It follows the source's trigs and pads, not its
+  sound.
+* The dip reaches the dry sound, the delay and reverb sends, the stereo mod's
+  left and right and the track's pair in USB `A16`; the delay and reverb
+  returns are not ducked.
+* Src, Amt and Rel can be p-locked per step on the ducked track (grid
+  recording, hold a trig, edit the item), and belong to the track's sound.
+* With Src `OFF` the mix is exactly the stock one; the CPU cost is negligible.
 
 ### Fast audio — `fast-audio`
 
@@ -262,19 +292,37 @@ Based on 18nelli's research and the FAST AUDIO of
 ### modkit — `modkit`
 
 Model:Samples only. The base the newer mods are built on (menus, pages,
-settings saved with the project or the device); the flasher adds it when a mod
-needs it. On its own it changes one thing:
+settings saved with the project or the device, p-locks); the flasher adds it
+when a mod needs it.
 
-* **CONFIG > DEVICE > Last Page** (`ON` by default): FUNC + TRACK opens Track
+* **CONFIG > Mods** (the last screen of CONFIG, with the gears): the mods'
+  own settings for the whole device, such as Upload (`stereo`) and Last Page.
+  It shows only when a mod has something there.
+* **CONFIG > Mods > Last Page** (`ON` by default): FUNC + TRACK opens Track
   Setup on the row you left it, and on a mod's page (such as Strch) if you left
   the menu there; BACK from the page goes back as usual.
+
+The mods' settings per track (Strch, Chan, Zero, Duck) belong to the track's
+**sound**: they go with a copied or pasted sound and are reset with it, like
+the stock sound parameters. They are saved with the project, and with Save
+Pattern to Project, in the project's own place on the +Drive, after the stock
+project data:
+
+* Transfer's project backup carries the mods' settings, and restoring it
+  brings them back (backups made before 2.2.0 have none).
+* Clearing a project slot clears them too.
+* On stock firmware a project loads and plays as usual (without the mods). If
+  it is saved there, the mods' settings of the patterns and kits changed on
+  stock firmware are dropped; the others are kept.
+* Projects saved with 2.1.0 are converted when loaded. A project saved with
+  2.2.0 loses its mods' settings on 2.1.0 firmware.
 
 Settings for the whole device live in a file on the +Drive, `modkit-settings`
 (beside `factory/` and `incoming/`; not in the sample browser). Transfer shows
 it: download it to back the settings up, delete it to reset them.
 
-The mods are independent, any combination works; `stereo` and `stretch` need
-`modkit`, which the flasher adds by itself.
+The mods are independent, any combination works; `smpl-edit`, `stereo`,
+`stretch` and `duck` need `modkit`, which the flasher adds by itself.
 
 ---
 

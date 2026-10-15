@@ -4,11 +4,15 @@ Model:Samples only. Stereo WAVs stay stereo, through the filter, the amp and the
 
 ## Upload in stereo
 
-Set **CONFIG > Device > Upload** to `ST` (default `MON`, as stock) and send stereo
+Set **CONFIG > Mods > Upload** to `ST` (default `MON`, as stock) and send stereo
 WAVs with **Elektron Transfer 1.9.5 or newer**. With `MON`, Transfer mixes them to
 mono as on stock firmware.
 
-![CONFIG > Device > Upload: MON / ST](media/stereo-upload.png)
+CONFIG > Mods is the last screen of CONFIG (the gears):
+
+![CONFIG > Mods](media/modkit-mods-menu.png)
+
+![CONFIG > Mods > Upload: MON / ST](media/stereo-upload.png)
 
 ## Playback
 
@@ -17,7 +21,8 @@ delay and reverb sends get its mono mix. With 16-channel USB audio (`usb16`, A16
 track's pair carries its left and right.
 
 **Track Setup** (FUNC + TRACK) **> Chan** `ST` / `MONO`: `MONO` plays the track's stereo
-samples as their mono mix, and saves the CPU of the second channel.
+samples as their mono mix, and saves the CPU of the second channel. Chan belongs to the
+track's sound: it goes with a copied sound and is saved with the project.
 
 ![Track Setup > Chan](media/stereo-chan.png)
 
@@ -26,5 +31,6 @@ samples as their mono mix, and saves the CPU of the second channel.
 - A stereo sample takes twice the sample memory, and each stereo track roughly 5 % more
   CPU. Several at once (five stereo tracks reach about 100 %) can make the device stop
   responding: use them wisely.
-- The sample browser's preview plays the mono mix of the first ~0.7 s.
+- The sample browser plays a sample already loaded into the project from its own copy,
+  whole; a sample not loaded yet previews as stock (the mono mix of its first ~0.7 s).
 - Samples uploaded in stereo play their mono mix on the stock firmware.
